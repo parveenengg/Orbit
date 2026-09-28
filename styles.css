@@ -17,6 +17,14 @@
   --orbit-text: #FFFFFF;
   --orbit-text-secondary: #9E9EB2;
   
+  /* Light Theme Variables */
+  --orbit-bg-light: #FAFAFA;
+  --orbit-surface-light: #FFFFFF;
+  --orbit-surface-elevated-light: #F0F0F0;
+  --orbit-text-light: #111111;
+  --orbit-text-secondary-light: #666666;
+  --orbit-border-light: rgba(0, 0, 0, 0.1);
+
   /* Accents */
   --orbit-accent: #FFFFFF;
   --orbit-border: rgba(255, 255, 255, 0.1);
@@ -64,7 +72,55 @@ img {
   padding: 0 2rem;
 }
 
-/* Typography */
+/* Theme Classes */
+.theme-light {
+  background-color: var(--orbit-bg-light);
+  color: var(--orbit-text-light);
+}
+.theme-light .site-nav {
+  background: rgba(250, 250, 250, 0.8);
+}
+.theme-light .nav-brand, .theme-light .nav-link:hover, .theme-light .footer-col a, .theme-light h1, .theme-light h2, .theme-light h3, .theme-light h4 {
+  color: var(--orbit-text-light);
+}
+.theme-light .nav-link, .theme-light .section-sub, .theme-light .footer-desc, .theme-light .footer-col h4, .theme-light .footer-bottom, .theme-light .text-body, .theme-light .principles-list li, .theme-light .process-step p {
+  color: var(--orbit-text-secondary-light);
+}
+.theme-light .site-footer, .theme-light .footer-bottom, .theme-light .border-bottom {
+  border-color: var(--orbit-border-light);
+}
+.theme-light .btn-primary {
+  background: var(--orbit-text-light);
+  color: var(--orbit-bg-light);
+}
+.theme-light .btn-secondary {
+  background: var(--orbit-surface-elevated-light);
+  color: var(--orbit-text-light);
+  border-color: var(--orbit-border-light);
+}
+.theme-dark {
+  background-color: var(--orbit-bg);
+  color: var(--orbit-text);
+}
+
+/* Utility Classes */
+.pt-15 { padding-top: 15rem; }
+.pb-6 { padding-bottom: 6rem; }
+.pb-10 { padding-bottom: 10rem; }
+.pb-1 { padding-bottom: 1rem; }
+.mt-2 { margin-top: 1.5rem; }
+.mt-3 { margin-top: 2.5rem; }
+.mb-3 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 4rem; }
+.max-w-800 { max-width: 800px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.border-bottom { border-bottom: 1px solid var(--orbit-border); }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.relative { position: relative; }
+.text-body { line-height: 1.7; color: var(--orbit-text-secondary); }
+.text-link { color: var(--orbit-text); text-decoration: underline; text-underline-offset: 4px; }
+.text-center { text-align: center; }
+.justify-center { justify-content: center; }
 h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -269,24 +325,109 @@ section {
 }
 
 /* ==========================================================================
-   Scroll-Driven Feature Story
+   Orbital Feature Wheel (Desktop) & Linear Story (Mobile)
    ========================================================================== */
 .feature-story {
-  padding: 6rem 0;
+  padding: 12rem 0 6rem;
+  overflow: hidden;
 }
 
-.story-container {
+/* DESKTOP LAYOUT */
+.desktop-orbital-layout {
   display: flex;
-  gap: 4rem;
+  height: 100vh;
+  align-items: center;
+  position: relative;
+  width: 100%;
 }
 
-.story-content {
+.orbital-left {
   flex: 1;
-  padding: 4rem 0 40vh; /* space for scrolling */
+  position: relative;
+  height: 100%;
 }
 
-.story-item {
-  margin-bottom: 40vh; /* space between text blocks */
+.orbital-right {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding-right: 2rem;
+}
+
+.wheel-container {
+  position: absolute;
+  top: 50%;
+  right: 200px; /* Center is exactly in the middle of .orbital-right (which is 400px wide) */
+  width: 1400px;
+  height: 1400px;
+  margin-top: -700px;
+  margin-right: -700px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05); /* faint ring */
+}
+
+/* Add a second partial faint ring for depth */
+.wheel-container::before {
+  content: "";
+  position: absolute;
+  top: 40px; left: 40px; right: 40px; bottom: 40px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.03);
+}
+
+.wheel-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+}
+
+.node-content {
+  position: absolute;
+  top: -60px; /* center vertically around the node dot */
+  left: 40px; /* distance from the dot */
+  width: 380px;
+  opacity: 0.3;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.node-content.active {
+  opacity: 1;
+}
+
+.node-dot {
+  position: absolute;
+  top: 60px; /* match top inverse */
+  left: -20px;
+  width: 10px;
+  height: 10px;
+  background: var(--orbit-text-secondary);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.node-content.active .node-dot {
+  background: var(--orbit-text);
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+  transform: scale(1.5);
+}
+
+/* Subtle line to the phone when active */
+.node-content.active::after {
+  content: "";
+  position: absolute;
+  top: 65px;
+  left: -10px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+  animation: drawLine 0.8s forwards ease-out;
+}
+
+@keyframes drawLine {
+  to { width: 120px; }
 }
 
 .story-num {
@@ -294,38 +435,31 @@ section {
   color: var(--orbit-text-secondary);
   font-weight: 500;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .story-title {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: 2rem;
   line-height: 1.3;
+  font-weight: 600;
 }
 
-.story-visual {
-  flex: 1;
+/* MOBILE LAYOUT */
+.mobile-orbital-layout {
   position: relative;
 }
 
-.story-visual-sticky {
-  position: sticky;
-  top: 20vh;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.story-content-mobile {
+  position: relative;
+  z-index: 5;
 }
 
-.story-img {
-  position: absolute;
-  max-height: 100%;
-  border-radius: var(--orbit-radius-lg);
-  border: 1px solid var(--orbit-border);
-  opacity: 0;
-  transition: opacity var(--transition-normal);
+.story-item-mob {
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
 }
 
-.story-img.active {
+.story-item-mob.active {
   opacity: 1;
 }
 
@@ -348,9 +482,25 @@ section {
    ========================================================================== */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
+}
+
+.card-wide {
+  grid-column: span 2;
+}
+.card-narrow {
+  grid-column: span 1;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-wide, .card-narrow {
+    grid-column: span 1;
+  }
 }
 
 .bento-card {
@@ -371,6 +521,119 @@ section {
 }
 
 /* ==========================================================================
+   Device Frames (CSS-Only)
+   ========================================================================== */
+.mac-frame {
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mac-top-bar {
+  height: 24px;
+  background: #2d2d2d;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.mac-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #444;
+}
+.mac-dot:nth-child(1) { background: #ff5f56; }
+.mac-dot:nth-child(2) { background: #ffbd2e; }
+.mac-dot:nth-child(3) { background: #27c93f; }
+
+.mac-frame img {
+  display: block;
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   Orbit Android Phone Component
+   ========================================================================== */
+.orbit-phone-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 300px;
+  width: 100%;
+}
+
+.orbit-phone-buttons {
+  position: absolute;
+  top: 100px;
+  right: -3px;
+  width: 3px;
+  height: 50px;
+  background: #333;
+  border-radius: 0 4px 4px 0;
+}
+
+.orbit-phone-buttons::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: 0;
+  width: 3px;
+  height: 30px;
+  background: #333;
+  border-radius: 0 4px 4px 0;
+}
+
+.orbit-phone-screen {
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 0 5px #111, 0 0 0 6px rgba(255,255,255,0.1);
+  position: relative;
+  aspect-ratio: 9 / 19.5;
+}
+
+.orbit-phone-camera {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #0a0a0a;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: inset 0 -1px 1px rgba(255,255,255,0.2);
+}
+
+.orbit-phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* GSAP Story Overlays */
+.story-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.story-img-overlay.active {
+  opacity: 1;
+}
+
+/* Remove old android-frame */
+
+
+/* ==========================================================================
    Cross Platform
    ========================================================================== */
 .platform-visual {
@@ -384,34 +647,47 @@ section {
 
 .platform-desktop {
   width: 80%;
-  border-radius: var(--orbit-radius-sm);
-  border: 1px solid var(--orbit-border);
 }
 
 .platform-mobile {
   position: absolute;
   right: 5%;
-  bottom: -5%;
+  bottom: -15%;
   width: 25%;
-  border-radius: var(--orbit-radius-lg);
-  border: 1px solid var(--orbit-border);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 .site-footer {
-  padding: 5rem 0 2rem;
+  position: relative;
+  padding: 6rem 0 2rem;
   border-top: 1px solid var(--orbit-border);
-  background: var(--orbit-bg);
+  overflow: hidden;
+}
+
+.footer-bg-ring {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120vw;
+  height: 120vw;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.03);
+  pointer-events: none;
+  z-index: 0;
+}
+.theme-light .footer-bg-ring {
+  border-color: rgba(0,0,0,0.05);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 4rem;
+  z-index: 1;
 }
 
 .footer-logo {
@@ -439,6 +715,7 @@ section {
   color: var(--orbit-text-secondary);
   margin-bottom: 1.5rem;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .footer-col ul {
@@ -452,11 +729,14 @@ section {
   color: var(--orbit-text);
   text-decoration: none;
   font-size: 0.95rem;
-  transition: color var(--transition-fast);
+  transition: opacity var(--transition-fast);
+  opacity: 0.8;
 }
 
 .footer-col a:hover {
-  color: var(--orbit-text-secondary);
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .footer-bottom {
@@ -464,7 +744,100 @@ section {
   border-top: 1px solid var(--orbit-border);
   color: var(--orbit-text-secondary);
   font-size: 0.85rem;
-  text-align: center;
+  z-index: 1;
+}
+
+.footer-legal-links a {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+.footer-legal-links a:hover {
+  text-decoration: underline;
+}
+
+/* Page Specific Classes for Open Source / About */
+.principles-list { list-style: none; margin-top: 1.5rem; }
+.principles-list li { margin-bottom: 1.5rem; line-height: 1.6; color: var(--orbit-text-secondary); padding-left: 1.5rem; position: relative; }
+.principles-list li::before { content: "•"; color: var(--orbit-text); position: absolute; left: 0; }
+
+.process-step { margin-bottom: 2.5rem; }
+.process-step h4 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+.process-step p { color: var(--orbit-text-secondary); line-height: 1.6; }
+.process-step a { color: var(--orbit-text); text-decoration: underline; text-underline-offset: 4px; }
+
+/* ==========================================================================
+   Privacy Diagram
+   ========================================================================== */
+.privacy-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.privacy-title {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: var(--orbit-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+.privacy-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.flow-icon {
+  width: 32px;
+  opacity: 0.8;
+}
+.flow-line {
+  width: 1px;
+  height: 40px;
+  background: var(--orbit-border);
+}
+.flow-text {
+  font-family: monospace;
+  color: var(--orbit-text-secondary);
+  font-size: 0.9rem;
+}
+.flow-arrow {
+  color: var(--orbit-text-secondary);
+  font-size: 0.8rem;
+  margin-top: -0.5rem;
+}
+.flow-device {
+  border: 1px solid var(--orbit-border);
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.03);
+}
+.privacy-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  border-top: 1px solid var(--orbit-border);
+  padding-top: 3rem;
+}
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pillar-label {
+  color: var(--orbit-text-secondary);
+  font-size: 0.9rem;
+}
+.pillar-value {
+  color: var(--orbit-text);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
 }
 
 /* ==========================================================================
@@ -484,4 +857,14 @@ section {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Orbital Layout Visibility */
+@media (max-width: 768px) {
+  .desktop-orbital-layout { display: none !important; }
+  .mobile-orbital-layout { display: block; }
+}
+@media (min-width: 769px) {
+  .mobile-orbital-layout { display: none !important; }
+  .desktop-orbital-layout { display: flex; }
 }

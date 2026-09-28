@@ -3,229 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orbit Features — Explore the Orbit Browser</title>
-  <meta name="description" content="Explore what Orbit can actually do. From personalization to pure speed, see how Orbit gives you control over your browsing.">
-  <meta name="author" content="Parveen Kumar">
-
-  <!-- Favicon -->
+  <title>Features — Explore Orbit Browser</title>
   <link rel="icon" type="image/png" href="assets/icons/orbit-circle.png">
-
-  <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Feature-specific styles */
-    .feature-page-hero {
-      padding-top: 10rem;
-      padding-bottom: 4rem;
-      text-align: center;
-    }
+    .features-hero { padding-top: 10rem; padding-bottom: 6rem; text-align: center; }
+    .feature-block { display: flex; align-items: center; gap: 4rem; margin-bottom: 10rem; }
+    .feature-block:nth-child(even) { flex-direction: row-reverse; }
+    .feature-text { flex: 1; }
+    .feature-visual { flex: 1; display: flex; justify-content: center; }
+    .feature-text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .feature-text p { color: var(--orbit-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
     
-    .feature-block {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-      padding: 6rem 0;
-      border-bottom: 1px solid var(--orbit-border);
-    }
-    
-    .feature-block:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-    
-    .feature-text {
-      flex: 1;
-    }
-    
-    .feature-text h3 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .feature-text ul {
-      list-style: none;
-    }
-    
-    .feature-text li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--orbit-text-secondary);
-    }
-    
-    .feature-text li::before {
-      content: "•";
-      color: var(--orbit-text);
-      position: absolute;
-      left: 0;
-      font-size: 1.2rem;
-    }
-    
-    .feature-visual {
-      flex: 1.2;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .feature-visual img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: var(--orbit-radius-md);
-      border: 1px solid var(--orbit-border);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
     @media (max-width: 768px) {
-      .feature-block, .feature-block:nth-child(even) {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 4rem 0;
-      }
+      .feature-block, .feature-block:nth-child(even) { flex-direction: column; text-align: center; gap: 2rem; margin-bottom: 6rem; }
     }
   </style>
 </head>
-<body>
+<body class="theme-dark">
 
-  <!-- Navigation -->
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-brand" aria-label="Orbit Home">
+      <a href="index.html" class="nav-brand">
         <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
         <span class="brand-name">Orbit</span>
       </a>
-
       <ul class="nav-links">
         <li><a href="features.html" class="nav-link">Features</a></li>
         <li><a href="privacy.html" class="nav-link">Privacy</a></li>
-        <li><a href="download.html" class="nav-link">Download</a></li>
+        <li><a href="opensource.html" class="nav-link">Open Source</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
       </ul>
-
-      <div class="nav-actions">
-        <a href="download.html" class="btn btn-primary">Download</a>
-      </div>
+      <div class="nav-actions"><a href="download.html" class="btn btn-primary">Download</a></div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="feature-page-hero">
+  <header class="features-hero">
     <div class="container">
-      <h1 class="hero-title">Features</h1>
-      <p class="section-sub">A closer look at how Orbit is built around you.</p>
+      <h1 class="hero-title">Explore Orbit</h1>
+      <p class="section-sub">A closer look at how Orbit works.</p>
     </div>
   </header>
 
-  <!-- Feature Sections -->
   <main class="container">
     
     <!-- Browsing -->
-    <section class="feature-block">
+    <div class="feature-block">
       <div class="feature-text">
-        <h3>Browsing</h3>
-        <p class="section-sub" style="margin-left: 0;">A clean home designed around where you want to go.</p>
-        <ul>
-          <li>Fast, clean search and address bar</li>
-          <li>Search engine selection (DuckDuckGo, Brave, etc.)</li>
-          <li>Customizable startup behavior</li>
-        </ul>
+        <h2>Clean Browsing</h2>
+        <p>Your home screen should reflect where you want to go, not what advertisers want you to click. Orbit offers a completely clutter-free interface focusing entirely on your search and bookmarks.</p>
       </div>
       <div class="feature-visual">
-        <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Home Browsing">
+        <div class="orbit-phone-wrapper">
+          <div class="orbit-phone-buttons"></div>
+          <div class="orbit-phone-screen">
+            <div class="orbit-phone-camera"></div>
+            <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Home Screen">
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
     <!-- Tabs -->
-    <section class="feature-block">
+    <div class="feature-block">
       <div class="feature-text">
-        <h3>Tabs</h3>
-        <p class="section-sub" style="margin-left: 0;">Keep your browsing organized without turning tab management into work.</p>
-        <ul>
-          <li>Intuitive tab management</li>
-          <li>Quickly close or select tabs</li>
-        </ul>
+        <h2>Effortless Tabs</h2>
+        <p>Keep your browsing organized without turning tab management into a chore. Orbit's tab interface is designed to be visually distinct, allowing you to instantly find the page you left off on.</p>
       </div>
       <div class="feature-visual">
-        <img src="assets/images/Orbit-Android-Tabs.jpeg" alt="Orbit Tabs">
+        <div class="orbit-phone-wrapper">
+          <div class="orbit-phone-buttons"></div>
+          <div class="orbit-phone-screen">
+            <div class="orbit-phone-camera"></div>
+            <img src="assets/images/Orbit-Android-Tabs.jpeg" alt="Orbit Tabs">
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
     <!-- Personalization -->
-    <section class="feature-block">
+    <div class="feature-block">
       <div class="feature-text">
-        <h3>Personalization</h3>
-        <p class="section-sub" style="margin-left: 0;">Make the browser your own.</p>
-        <ul>
-          <li>Light, Dark, and System theme support</li>
-          <li>Custom accent colors</li>
-        </ul>
+        <h2>Deep Personalization</h2>
+        <p>Light mode, Dark mode, or matched to your system. Select your own accent colors and adapt the browser's UI to feel like a native extension of your device.</p>
       </div>
       <div class="feature-visual">
-        <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Appearance">
+        <div class="orbit-phone-wrapper">
+          <div class="orbit-phone-buttons"></div>
+          <div class="orbit-phone-screen">
+            <div class="orbit-phone-camera"></div>
+            <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Appearance">
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Privacy & Control -->
-    <section class="feature-block">
+    <!-- Control -->
+    <div class="feature-block">
       <div class="feature-text">
-        <h3>Privacy & Control</h3>
-        <p class="section-sub" style="margin-left: 0;">Clear, accessible controls for your data.</p>
-        <ul>
-          <li>History controls</li>
-          <li>Clear browsing data (cache, cookies, local storage)</li>
-          <li>Site permissions (camera, microphone, location)</li>
-        </ul>
+        <h2>Granular Control</h2>
+        <p>Search engine freedom, startup behavior, and strict site permissions. You decide exactly which sites have access to your hardware and location, all from a clear settings panel.</p>
       </div>
       <div class="feature-visual">
-        <img src="assets/images/Orbit-Android-Settings.jpeg" alt="Orbit Settings">
+        <div class="orbit-phone-wrapper">
+          <div class="orbit-phone-buttons"></div>
+          <div class="orbit-phone-screen">
+            <div class="orbit-phone-camera"></div>
+            <img src="assets/images/Orbit-Android-Settings.jpeg" alt="Orbit Settings">
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
   </main>
 
-  <section class="download-cta" style="padding-bottom: 4rem;">
+  <section class="download-cta theme-dark" style="padding: 6rem 0;">
     <div class="container text-center">
-      <a href="privacy.html" class="btn btn-secondary mt-2">Read about privacy</a>
+      <h2 class="section-title">Ready to browse differently?</h2>
+      <div class="hero-actions justify-center mt-3">
+        <a href="download.html" class="btn btn-primary btn-lg">Download Orbit</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="footer-bg-ring"></div>
+    <div class="container relative">
       <div class="footer-grid">
-        
         <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="assets/icons/orbit-circle.png" alt="Orbit Logo">
-            <span>Orbit</span>
-          </div>
-          <p class="footer-desc">A clean, customizable browser designed to stay out of your way.</p>
+          <div class="footer-logo"><img src="assets/icons/orbit-circle.png" alt="Orbit Logo"><span>Orbit</span></div>
+          <p class="footer-desc">Browse on your terms.</p>
         </div>
-
         <div class="footer-col">
-          <h4>PRODUCT</h4>
-          <ul>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="download.html">Download</a></li>
-          </ul>
+          <h4>Product</h4>
+          <ul><li><a href="features.html">Features</a></li><li><a href="download.html">Download</a></li></ul>
         </div>
-
         <div class="footer-col">
-          <h4>TRUST</h4>
-          <ul>
-            <li><a href="privacy.html">Privacy</a></li>
-          </ul>
+          <h4>Open Source</h4>
+          <ul><li><a href="https://github.com/parveenengg/Orbit">Repository</a></li><li><a href="opensource.html">Contribute</a></li><li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li><li><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">License</a></li></ul>
         </div>
-
         <div class="footer-col">
-          <h4>RESOURCES</h4>
-          <ul>
-            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener">GitHub</a></li>
-          </ul>
+          <h4>Trust</h4>
+          <ul><li><a href="privacy.html">Privacy</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul><li><a href="about.html">About</a></li><li><a href="about.html#creator">Creator</a></li></ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Orbit Browser. Open source.</p>
+      <div class="footer-bottom flex-between">
+        <p>&copy; 2026 Orbit Browser.</p>
+        <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">Licenses</a></div>
       </div>
     </div>
   </footer>
-
 </body>
 </html>

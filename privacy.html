@@ -56,7 +56,8 @@
       <ul class="nav-links">
         <li><a href="features.html" class="nav-link">Features</a></li>
         <li><a href="privacy.html" class="nav-link">Privacy</a></li>
-        <li><a href="download.html" class="nav-link">Download</a></li>
+        <li><a href="opensource.html" class="nav-link">Open Source</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -76,6 +77,35 @@
   <!-- Privacy Content -->
   <main class="container privacy-content">
     
+    <!-- Privacy Data Flow Visualization -->
+    <div class="privacy-diagram" style="margin-bottom: 6rem; padding: 4rem 2rem; border-radius: 20px; border: 1px solid var(--orbit-border); width: 100%; box-sizing: border-box;">
+      <h2 class="privacy-title">YOUR BROWSING</h2>
+      <div class="privacy-flow">
+        <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="flow-icon">
+        <div class="flow-line"></div>
+        <span class="flow-text">stays here</span>
+        <div class="flow-line"></div>
+        <div class="flow-arrow">▼</div>
+        <div class="flow-device">
+          [ YOUR DEVICE ]
+        </div>
+      </div>
+      <div class="privacy-pillars mt-5">
+        <div class="pillar">
+          <span class="pillar-label">History</span>
+          <strong class="pillar-value">LOCAL</strong>
+        </div>
+        <div class="pillar">
+          <span class="pillar-label">Permissions</span>
+          <strong class="pillar-value">CONTROLLED</strong>
+        </div>
+        <div class="pillar">
+          <span class="pillar-label">Data</span>
+          <strong class="pillar-value">YOURS</strong>
+        </div>
+      </div>
+    </div>
+
     <section class="privacy-section">
       <h3>What stays on your device</h3>
       <p>Your browsing history, site data, cache, and local storage stay entirely on your device. Orbit does not sync or transmit your browsing activity to any external server or corporate cloud.</p>
@@ -105,7 +135,8 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="footer-bg-ring"></div>
+    <div class="container relative">
       <div class="footer-grid">
         
         <div class="footer-brand">
@@ -113,11 +144,11 @@
             <img src="assets/icons/orbit-circle.png" alt="Orbit Logo">
             <span>Orbit</span>
           </div>
-          <p class="footer-desc">A clean, customizable browser designed to stay out of your way.</p>
+          <p class="footer-desc">Browse on your terms.</p>
         </div>
 
         <div class="footer-col">
-          <h4>PRODUCT</h4>
+          <h4>Product</h4>
           <ul>
             <li><a href="features.html">Features</a></li>
             <li><a href="download.html">Download</a></li>
@@ -125,21 +156,37 @@
         </div>
 
         <div class="footer-col">
-          <h4>TRUST</h4>
+          <h4>Open Source</h4>
+          <ul>
+            <li><a href="https://github.com/parveenengg/Orbit">Repository</a></li>
+            <li><a href="opensource.html">Contribute</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">License</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust</h4>
           <ul>
             <li><a href="privacy.html">Privacy</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>RESOURCES</h4>
+          <h4>Project</h4>
           <ul>
-            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#creator">Creator</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Orbit Browser. Open source.</p>
+      
+      <div class="footer-bottom flex-between">
+        <p>&copy; 2026 Orbit Browser.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">Licenses</a>
+        </div>
       </div>
     </div>
   </footer>

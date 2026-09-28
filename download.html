@@ -71,7 +71,8 @@
       <ul class="nav-links">
         <li><a href="features.html" class="nav-link">Features</a></li>
         <li><a href="privacy.html" class="nav-link">Privacy</a></li>
-        <li><a href="download.html" class="nav-link">Download</a></li>
+        <li><a href="opensource.html" class="nav-link">Open Source</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -90,10 +91,11 @@
 
   <!-- Download Grid -->
   <main class="container">
-    <div class="download-grid">
+    <div class="download-grid" style="margin-bottom: 2rem;">
       
       <!-- macOS -->
       <div class="download-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 384 512" fill="currentColor" style="margin-bottom: 1rem;"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
         <h3>macOS</h3>
         <div class="download-meta">
           macOS 12.0+ (Universal)<br>
@@ -104,6 +106,7 @@
 
       <!-- Android -->
       <div class="download-card">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 576 512" fill="currentColor" style="margin-bottom: 1rem;"><path d="M420.55,301.93a24,24,0,1,1,24-24,24,24,0,0,1-24,24m-265.1,0a24,24,0,1,1,24-24,24,24,0,0,1-24,24m273.7-144.48,47.94-83a10,10,0,1,0-17.27-10l-48.54,84.07a301.25,301.25,0,0,0-246.56,0L116.18,64.45a10,10,0,1,0-17.27,10l47.94,83C64.53,202.22,8.24,285.55,0,384H576c-8.24-98.45-64.54-181.78-146.85-226.55"/></svg>
         <h3>Android</h3>
         <div class="download-meta">
           Android 8.0+<br>
@@ -114,11 +117,19 @@
       </div>
 
     </div>
+
+    <!-- Coming Soon -->
+    <div class="text-center pb-10">
+      <p class="text-body">
+        <strong>Windows and Linux</strong> &mdash; Coming soon.
+      </p>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="footer-bg-ring"></div>
+    <div class="container relative">
       <div class="footer-grid">
         
         <div class="footer-brand">
@@ -126,11 +137,11 @@
             <img src="assets/icons/orbit-circle.png" alt="Orbit Logo">
             <span>Orbit</span>
           </div>
-          <p class="footer-desc">A clean, customizable browser designed to stay out of your way.</p>
+          <p class="footer-desc">Browse on your terms.</p>
         </div>
 
         <div class="footer-col">
-          <h4>PRODUCT</h4>
+          <h4>Product</h4>
           <ul>
             <li><a href="features.html">Features</a></li>
             <li><a href="download.html">Download</a></li>
@@ -138,21 +149,37 @@
         </div>
 
         <div class="footer-col">
-          <h4>TRUST</h4>
+          <h4>Open Source</h4>
+          <ul>
+            <li><a href="https://github.com/parveenengg/Orbit">Repository</a></li>
+            <li><a href="opensource.html">Contribute</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">License</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust</h4>
           <ul>
             <li><a href="privacy.html">Privacy</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>RESOURCES</h4>
+          <h4>Project</h4>
           <ul>
-            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#creator">Creator</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Orbit Browser. Open source.</p>
+      
+      <div class="footer-bottom flex-between">
+        <p>&copy; 2026 Orbit Browser.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">Licenses</a>
+        </div>
       </div>
     </div>
   </footer>
