@@ -3,276 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orbit — The Minimal, Open-Source Web Browser</title>
-  <meta name="description" content="Orbit is an open-source, privacy-first web browser engineered for pure focus, fast form filling, and effortless bookmark management. No developer-side tracking.">
+  <title>Orbit — A Browser Built Around You</title>
+  <meta name="description" content="A clean, customizable browser designed to stay out of your way.">
   <meta name="author" content="Parveen Kumar">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/icons/logo.png">
+  <link rel="icon" type="image/png" href="assets/icons/orbit-circle.png">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- 3D Three.js WebGL Canvas Container -->
-  <div id="webgl-container" aria-hidden="true"></div>
-
-  <!-- Noise Overlay -->
-  <div class="noise-overlay" aria-hidden="true"></div>
-
   <!-- Navigation -->
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-brand" aria-label="Orbit Home">
-        <img src="assets/icons/logo.png" alt="Orbit Logo" class="brand-icon">
-        <span class="brand-name">ORBIT</span>
+        <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
+        <span class="brand-name">Orbit</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link active">Home</a></li>
         <li><a href="features.html" class="nav-link">Features</a></li>
-        <li><a href="manifesto.html" class="nav-link">Manifesto</a></li>
+        <li><a href="privacy.html" class="nav-link">Privacy</a></li>
         <li><a href="download.html" class="nav-link">Download</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="download.html" class="btn btn-sm btn-primary">
-          <span>Download</span>
-        </a>
+        <a href="download.html" class="btn btn-primary">Download</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="container">
-      
-      <div class="hero-pill">
-        <span class="status-dot"></span>
-        <span>Orbit 1.0.1 &bull; Open Source &bull; Zero Dev Tracking</span>
-      </div>
-
-      <h1 class="hero-title">
-        A CALMER WINDOW<br>
-        <span class="text-gradient">INTO THE WEB.</span>
-      </h1>
-
+    <div class="container hero-content">
+      <h1 class="hero-title">Browse on your terms.</h1>
       <p class="hero-sub">
-        An open-source, minimalist browser engineered without the advertising circus. Zero tracking from our side. Built for pure speed, fast form filling, and effortless bookmarks.
+        A clean, customizable browser designed<br>
+        to stay out of your way.
       </p>
-
       <div class="hero-actions">
-        <a href="download.html" class="btn btn-lg btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          <span id="heroBtnLabel">Download Orbit</span>
-        </a>
-        <a href="features.html" class="btn btn-lg btn-glass">
-          <span>Explore Features &rarr;</span>
-        </a>
+        <a href="download.html" class="btn btn-primary btn-lg">Download Orbit</a>
+        <a href="features.html" class="btn btn-secondary btn-lg">Explore Orbit</a>
       </div>
-
-      <!-- Desktop Browser Window Representation -->
-      <div class="simulator-wrapper">
-        <div class="simulator-inner">
-          
-          <!-- Realistic Desktop Browser Chrome -->
-          <div class="sim-header">
-            <div class="sim-dots">
-              <span class="sim-dot r" title="Close"></span>
-              <span class="sim-dot y" title="Minimize"></span>
-              <span class="sim-dot g" title="Maximize"></span>
-            </div>
-
-            <!-- Browser Navigation Buttons -->
-            <div class="sim-nav-btns">
-              <button class="sim-nav-btn" title="Back" disabled>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-              </button>
-              <button class="sim-nav-btn" title="Forward" disabled>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-              <button class="sim-nav-btn" title="Reload">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
-              </button>
-            </div>
-
-            <!-- Active Desktop Tab -->
-            <div class="sim-tabs">
-              <div class="sim-desktop-tab active">
-                <img src="assets/icons/orbit-circle.png" alt="Orbit" class="sim-tab-icon">
-                <span>New Tab</span>
-                <span class="tab-x">&times;</span>
-              </div>
-              <button class="sim-newtab-btn" title="New Tab">+</button>
-            </div>
-
-            <!-- Central Desktop Omnibar / URL Pill -->
-            <div class="sim-url-pill">
-              <div style="display: flex; align-items: center; gap: 0.4rem;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                <span id="simAddressBar">orbit://newtab</span>
-              </div>
-              <span class="sim-shortcut-badge">⌘L</span>
-            </div>
-
-            <!-- Right Controls -->
-            <div class="sim-right-controls">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sim-ctrl-icon"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sim-ctrl-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-            </div>
-          </div>
-
-          <!-- Majestic Desktop Viewport Canvas -->
-          <div class="sim-body">
-            
-            <!-- Start Page Identity -->
-            <div class="desktop-start-brand">
-              <img src="assets/icons/logo.png" alt="Orbit Browser" class="desktop-brand-logo">
-              <h3 class="desktop-brand-title">Orbit</h3>
-              <p class="desktop-brand-subtitle">The quiet, open-source window into the internet.</p>
-            </div>
-
-            <!-- Desktop Search Bar -->
-            <div class="sim-search-bar">
-              <span id="activeSearchIcon" style="font-size: 1.15rem;">🦆</span>
-              <input type="text" id="simSearchInput" placeholder="Search freely or enter URL..." value="Zero dev tracking. Pure speed." readonly>
-              <span class="mono" style="font-size: 0.75rem; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 6px;">↵ Enter</span>
-            </div>
-
-            <!-- Search Engine Freedom Selector -->
-            <div class="sim-engines">
-              <span style="font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; margin-right: 0.25rem;">Default Engine:</span>
-              <button class="engine-tag active" onclick="pickEngine('duckduckgo', '🦆', 'DuckDuckGo')">DuckDuckGo</button>
-              <button class="engine-tag" onclick="pickEngine('google', '🔍', 'Google')">Google</button>
-              <button class="engine-tag" onclick="pickEngine('brave', '🦁', 'Brave Search')">Brave</button>
-              <button class="engine-tag" onclick="pickEngine('startpage', '🛡️', 'Startpage')">Startpage</button>
-              <button class="engine-tag" onclick="pickEngine('bing', '🔷', 'Bing')">Bing</button>
-            </div>
-
-            <!-- Desktop Quick Shortcuts Grid -->
-            <div class="desktop-shortcuts">
-              <a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener" class="desktop-shortcut-item">
-                <div class="shortcut-icon-box">⌨️</div>
-                <span>GitHub</span>
-              </a>
-              <a href="features.html" class="desktop-shortcut-item">
-                <div class="shortcut-icon-box">⚡</div>
-                <span>Features</span>
-              </a>
-              <a href="manifesto.html" class="desktop-shortcut-item">
-                <div class="shortcut-icon-box">🛡️</div>
-                <span>Manifesto</span>
-              </a>
-              <a href="download.html" class="desktop-shortcut-item">
-                <div class="shortcut-icon-box">📦</div>
-                <span>Downloads</span>
-              </a>
-              <div class="desktop-shortcut-item">
-                <div class="shortcut-icon-box" style="border-style: dashed; color: var(--text-muted);">+</div>
-                <span>Add</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
+    </div>
+    
+    <!-- Hero Product Visual (Desktop Mockup) -->
+    <div class="hero-visual-wrapper" id="heroVisual">
+      <img src="assets/orbit-mac-interface.png" alt="Orbit macOS Interface" class="hero-product-img desktop-visual">
     </div>
   </header>
 
-  <!-- Editorial Philosophy Section (Spacious & Minimalist) -->
-  <section class="editorial-section">
+  <!-- Meet Orbit -->
+  <section class="meet-orbit">
     <div class="container">
-      
-      <div class="editorial-header">
-        <h2 class="editorial-title">Minimalism by Architecture.</h2>
-        <p class="editorial-sub">
-          We stripped away the crypto tokens, the telemetry beacons, and the bloated AI sidebars. What remains is a pure, responsive tool built for human attention.
-        </p>
+      <div class="section-header text-center">
+        <h2 class="section-title">Your browser.<br>Without the clutter.</h2>
       </div>
-
-      <div class="editorial-grid">
-        
-        <div class="editorial-col">
-          <span class="col-num">01 / PRIVACY</span>
-          <h3 class="col-heading">Zero Dev-Side Tracking</h3>
-          <p class="col-text">
-            Orbit is open source. There are no telemetry pings, no analytics beacons, and no tracking code from our side. What you browse stays strictly on your machine.
-          </p>
-        </div>
-
-        <div class="editorial-col">
-          <span class="col-num">02 / SPEED</span>
-          <h3 class="col-heading">Fast Form Filling</h3>
-          <p class="col-text">
-            Repetitive data entry belongs in the past. Orbit features instant, intelligent form filling that speeds up logins and checkouts without sending your data to the cloud.
-          </p>
-        </div>
-
-        <div class="editorial-col">
-          <span class="col-num">03 / SIMPLICITY</span>
-          <h3 class="col-heading">Bookmarks Save & Restore</h3>
-          <p class="col-text">
-            Cloud conveniences are kept strictly minimal and practical: seamlessly save your essential bookmarks and restore them cleanly across devices whenever you need.
-          </p>
-        </div>
-
+      <div class="product-showcase">
+        <!-- Will be replaced with actual UI representation / cropped screenshot -->
+        <img src="assets/orbit-mac-interface.png" alt="Orbit Interface Clean" class="showcase-img">
       </div>
-
     </div>
   </section>
 
-  <!-- Minimalist Footer -->
+  <!-- Scroll-Driven Feature Story -->
+  <section class="feature-story" id="featureStory">
+    <div class="container story-container">
+      <div class="story-content">
+        <!-- Story Items -->
+        <div class="story-item" id="story-1">
+          <span class="story-num">01 — Browse</span>
+          <h3 class="story-title">A clean home designed around where you want to go.</h3>
+        </div>
+        <div class="story-item" id="story-2">
+          <span class="story-num">02 — Tabs</span>
+          <h3 class="story-title">Keep your browsing organized without turning tab management into work.</h3>
+        </div>
+        <div class="story-item" id="story-3">
+          <span class="story-num">03 — Your browser, your look</span>
+          <h3 class="story-title">Light. Dark. System. Choose your accent and make the home screen yours.</h3>
+        </div>
+        <div class="story-item" id="story-4">
+          <span class="story-num">04 — Control</span>
+          <h3 class="story-title">History, permissions, startup behavior, and search engine are accessible from a clear settings interface.</h3>
+        </div>
+      </div>
+      
+      <div class="story-visual">
+        <div class="story-visual-sticky">
+          <!-- Pinned visuals (Mobile Screenshots) -->
+          <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Mobile Home" class="story-img active" id="story-img-1">
+          <img src="assets/images/Orbit-Android-Tabs.jpeg" alt="Orbit Mobile Tabs" class="story-img" id="story-img-2">
+          <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Mobile Appearance" class="story-img" id="story-img-3">
+          <img src="assets/images/Orbit-Android-Settings.jpeg" alt="Orbit Mobile Settings" class="story-img" id="story-img-4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customization Showcase -->
+  <section class="customization-section">
+    <div class="container text-center">
+      <h2 class="section-title">Make Orbit yours.</h2>
+      <p class="section-sub">
+        Light when you want it.<br>
+        Dark when you don't.<br>
+        Your colors either way.
+      </p>
+      <div class="customization-visual">
+        <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Appearance Customization" class="customization-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Grid -->
+  <section class="feature-grid-section">
+    <div class="container">
+      <div class="bento-grid">
+        <div class="bento-card">
+          <h4>Search Engine Choice</h4>
+          <p>Easily switch between DuckDuckGo, Google, Brave, and others.</p>
+        </div>
+        <div class="bento-card">
+          <h4>Site Permissions</h4>
+          <p>Control which sites have access to your camera, microphone, and location.</p>
+        </div>
+        <div class="bento-card">
+          <h4>Clear Browsing Data</h4>
+          <p>Instantly remove history, cache, cookies, and local storage on demand.</p>
+        </div>
+        <div class="bento-card">
+          <h4>Bookmarks</h4>
+          <p>Save essential sites and organize them cleanly without clutter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy / Trust Teaser -->
+  <section class="privacy-teaser">
+    <div class="container text-center">
+      <h2 class="section-title">Your browser.<br>Your data.</h2>
+      <p class="section-sub">
+        Orbit is engineered with privacy at its core. What you browse stays strictly on your machine.
+      </p>
+      <a href="privacy.html" class="btn btn-secondary mt-2">How Orbit handles your data</a>
+    </div>
+  </section>
+
+  <!-- Cross-Platform Section -->
+  <section class="cross-platform">
+    <div class="container text-center">
+      <h2 class="section-title">Orbit, wherever you browse.</h2>
+      <div class="platform-visual">
+        <!-- Desktop and Android composite image/mockup -->
+        <img src="assets/orbit-mac-interface.png" alt="Orbit Desktop" class="platform-desktop">
+        <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Android" class="platform-mobile">
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="download-cta">
+    <div class="container text-center">
+      <h2 class="section-title">Ready to browse differently?</h2>
+      <div class="hero-actions justify-center mt-3">
+        <a href="download.html" class="btn btn-primary btn-lg">Download Orbit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      
-      <div class="footer-top">
+      <div class="footer-grid">
+        
         <div class="footer-brand">
-          <div style="display: flex; align-items: center; gap: 0.6rem;">
-            <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" style="width: 26px; height: 26px; border-radius: 50%; object-fit: cover;">
-            <span style="font-weight: 700; color: #FFFFFF; font-size: 1.1rem; letter-spacing: -0.02em;">ORBIT</span>
+          <div class="footer-logo">
+            <img src="assets/icons/orbit-circle.png" alt="Orbit Logo">
+            <span>Orbit</span>
           </div>
-          <p class="footer-desc">
-            The open-source, privacy-first web browser. Built with intentional minimalism by Parveen Kumar.
-          </p>
+          <p class="footer-desc">A clean, customizable browser designed to stay out of your way.</p>
         </div>
 
-        <div class="footer-nav">
-          <div>
-            <h4 class="footer-col-title">Pages</h4>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="features.html">Features</a></li>
-              <li><a href="manifesto.html">Manifesto</a></li>
-              <li><a href="download.html">Download</a></li>
-            </ul>
-          </div>
+        <div class="footer-col">
+          <h4>PRODUCT</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="download.html">Download</a></li>
+          </ul>
+        </div>
 
-          <div>
-            <h4 class="footer-col-title">Platforms</h4>
-            <ul class="footer-links">
-              <li><a href="download.html">macOS (Universal)</a></li>
-              <li><a href="downloads/Orbit.apk" download="Orbit.apk">Android APK (28MB)</a></li>
-              <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener">GitHub Source</a></li>
-            </ul>
-          </div>
+        <div class="footer-col">
+          <h4>TRUST</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>RESOURCES</h4>
+          <ul>
+            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <span>&copy; 2026 Orbit Browser. Open source. Zero telemetry.</span>
-        <span>Crafted by <a href="https://github.com/parveenengg" target="_blank" rel="noopener" style="color: var(--text-secondary); text-decoration: underline;">Parveen Kumar</a></span>
+        <p>&copy; 2026 Orbit Browser. Open source.</p>
       </div>
-
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="vendor/three.min.js"></script>
-  <script src="vendor/gsap.min.js"></script>
-  <script src="three-scene.js"></script>
+  <!-- Scripts: Minimal for now, GSAP will be added later in Phase E/F -->
   <script src="app.js"></script>
 </body>
 </html>

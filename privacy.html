@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Orbit — Desktop & Android</title>
-  <meta name="description" content="Download the Orbit browser for macOS and Android.">
+  <title>Privacy — How Orbit Handles Your Data</title>
+  <meta name="description" content="Learn exactly how Orbit protects your privacy. Factual, transparent, and completely verifiable.">
   <meta name="author" content="Parveen Kumar">
 
   <!-- Favicon -->
@@ -13,48 +13,33 @@
   <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="styles.css">
   <style>
-    .download-hero {
+    .privacy-hero {
       padding-top: 10rem;
-      padding-bottom: 2rem;
+      padding-bottom: 4rem;
       text-align: center;
     }
     
-    .download-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto 6rem;
+    .privacy-content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-bottom: 6rem;
     }
     
-    .download-card {
-      background: var(--orbit-surface);
-      border: 1px solid var(--orbit-border);
-      border-radius: var(--orbit-radius-lg);
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    .privacy-section {
+      margin-bottom: 4rem;
     }
     
-    .download-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    .privacy-section h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--orbit-border);
+      padding-bottom: 0.5rem;
     }
     
-    .download-meta {
-      font-family: monospace;
+    .privacy-section p {
       color: var(--orbit-text-secondary);
-      font-size: 0.85rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
       line-height: 1.6;
-    }
-    
-    @media (max-width: 768px) {
-      .download-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -81,39 +66,41 @@
   </nav>
 
   <!-- Hero Section -->
-  <header class="download-hero">
+  <header class="privacy-hero">
     <div class="container">
-      <h1 class="hero-title">Download Orbit</h1>
-      <p class="section-sub">Browse on your terms, wherever you go.</p>
+      <h1 class="hero-title">Privacy</h1>
+      <p class="section-sub">Factual transparency regarding your data.</p>
     </div>
   </header>
 
-  <!-- Download Grid -->
-  <main class="container">
-    <div class="download-grid">
-      
-      <!-- macOS -->
-      <div class="download-card">
-        <h3>macOS</h3>
-        <div class="download-meta">
-          macOS 12.0+ (Universal)<br>
-          Version 1.0.1<br>
-        </div>
-        <a href="#" class="btn btn-primary btn-lg" style="width: 100%;">Download for macOS</a>
-      </div>
+  <!-- Privacy Content -->
+  <main class="container privacy-content">
+    
+    <section class="privacy-section">
+      <h3>What stays on your device</h3>
+      <p>Your browsing history, site data, cache, and local storage stay entirely on your device. Orbit does not sync or transmit your browsing activity to any external server or corporate cloud.</p>
+    </section>
 
-      <!-- Android -->
-      <div class="download-card">
-        <h3>Android</h3>
-        <div class="download-meta">
-          Android 8.0+<br>
-          Version 1.0.1 (APK)<br>
-          File size: 28MB
-        </div>
-        <a href="downloads/Orbit.apk" download="Orbit.apk" class="btn btn-secondary btn-lg" style="width: 100%;">Download APK</a>
-      </div>
+    <section class="privacy-section">
+      <h3>Telemetry & Analytics</h3>
+      <p>Orbit does not use developer-side telemetry. We do not track how many tabs you open, which settings you change, or how long you use the browser. We rely on community feedback rather than silent background analytics.</p>
+    </section>
 
-    </div>
+    <section class="privacy-section">
+      <h3>Site Permissions</h3>
+      <p>You have full, granular control over site permissions. Any website requesting access to your camera, microphone, or location must be explicitly approved by you. You can revoke these permissions at any time through the Settings interface.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h3>Search Engines</h3>
+      <p>By default, Orbit allows you to choose your preferred search engine (such as DuckDuckGo, Brave Search, Startpage, Google, or Bing). When you search, your queries are subject to the privacy policy of the search engine you have chosen.</p>
+    </section>
+
+    <section class="privacy-section">
+      <h3>Data Deletion</h3>
+      <p>You can instantly wipe your browsing history, cookies, cache, and site data through the "Clear Browsing Data" option in Settings. Once deleted, this data cannot be recovered.</p>
+    </section>
+
   </main>
 
   <!-- Footer -->
