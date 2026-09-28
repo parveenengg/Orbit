@@ -72,37 +72,106 @@
         </a>
       </div>
 
-      <!-- Minimal Interactive Browser Simulator -->
+      <!-- Desktop Browser Window Representation -->
       <div class="simulator-wrapper">
         <div class="simulator-inner">
           
+          <!-- Realistic Desktop Browser Chrome -->
           <div class="sim-header">
             <div class="sim-dots">
-              <span class="sim-dot r"></span>
-              <span class="sim-dot y"></span>
-              <span class="sim-dot g"></span>
+              <span class="sim-dot r" title="Close"></span>
+              <span class="sim-dot y" title="Minimize"></span>
+              <span class="sim-dot g" title="Maximize"></span>
             </div>
+
+            <!-- Browser Navigation Buttons -->
+            <div class="sim-nav-btns">
+              <button class="sim-nav-btn" title="Back" disabled>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="sim-nav-btn" title="Forward" disabled>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+              <button class="sim-nav-btn" title="Reload">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              </button>
+            </div>
+
+            <!-- Active Desktop Tab -->
+            <div class="sim-tabs">
+              <div class="sim-desktop-tab active">
+                <img src="assets/icons/logo.png" alt="Orbit" style="width: 14px; height: 14px; border-radius: 3px;">
+                <span>New Tab</span>
+                <span class="tab-x">&times;</span>
+              </div>
+              <button class="sim-newtab-btn" title="New Tab">+</button>
+            </div>
+
+            <!-- Central Desktop Omnibar / URL Pill -->
             <div class="sim-url-pill">
-              <span id="simAddressBar">orbit://newtab</span>
+              <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span id="simAddressBar">orbit://newtab</span>
+              </div>
+              <span class="sim-shortcut-badge">⌘L</span>
             </div>
-            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">ESC</span>
+
+            <!-- Right Controls -->
+            <div class="sim-right-controls">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sim-ctrl-icon"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sim-ctrl-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+            </div>
           </div>
 
+          <!-- Majestic Desktop Viewport Canvas -->
           <div class="sim-body">
             
-            <div class="sim-search-bar">
-              <span id="activeSearchIcon" style="font-size: 1.1rem;">🦆</span>
-              <input type="text" id="simSearchInput" placeholder="Search freely without tracking..." value="Pure focus mode" readonly>
+            <!-- Start Page Identity -->
+            <div class="desktop-start-brand">
+              <img src="assets/icons/logo.png" alt="Orbit Browser" class="desktop-brand-logo">
+              <h3 class="desktop-brand-title">Orbit</h3>
+              <p class="desktop-brand-subtitle">The quiet, open-source window into the internet.</p>
             </div>
 
-            <!-- Choose Search Engine Freely -->
+            <!-- Desktop Search Bar -->
+            <div class="sim-search-bar">
+              <span id="activeSearchIcon" style="font-size: 1.15rem;">🦆</span>
+              <input type="text" id="simSearchInput" placeholder="Search freely or enter URL..." value="Zero dev tracking. Pure speed." readonly>
+              <span class="mono" style="font-size: 0.75rem; color: var(--text-muted); background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 6px;">↵ Enter</span>
+            </div>
+
+            <!-- Search Engine Freedom Selector -->
             <div class="sim-engines">
-              <span style="font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; margin-right: 0.25rem;">Search Engine:</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; margin-right: 0.25rem;">Default Engine:</span>
               <button class="engine-tag active" onclick="pickEngine('duckduckgo', '🦆', 'DuckDuckGo')">DuckDuckGo</button>
               <button class="engine-tag" onclick="pickEngine('google', '🔍', 'Google')">Google</button>
               <button class="engine-tag" onclick="pickEngine('brave', '🦁', 'Brave Search')">Brave</button>
               <button class="engine-tag" onclick="pickEngine('startpage', '🛡️', 'Startpage')">Startpage</button>
               <button class="engine-tag" onclick="pickEngine('bing', '🔷', 'Bing')">Bing</button>
+            </div>
+
+            <!-- Desktop Quick Shortcuts Grid -->
+            <div class="desktop-shortcuts">
+              <a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener" class="desktop-shortcut-item">
+                <div class="shortcut-icon-box">⌨️</div>
+                <span>GitHub</span>
+              </a>
+              <a href="features.html" class="desktop-shortcut-item">
+                <div class="shortcut-icon-box">⚡</div>
+                <span>Features</span>
+              </a>
+              <a href="manifesto.html" class="desktop-shortcut-item">
+                <div class="shortcut-icon-box">🛡️</div>
+                <span>Manifesto</span>
+              </a>
+              <a href="download.html" class="desktop-shortcut-item">
+                <div class="shortcut-icon-box">📦</div>
+                <span>Downloads</span>
+              </a>
+              <div class="desktop-shortcut-item">
+                <div class="shortcut-icon-box" style="border-style: dashed; color: var(--text-muted);">+</div>
+                <span>Add</span>
+              </div>
             </div>
 
           </div>

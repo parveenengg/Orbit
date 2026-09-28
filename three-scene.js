@@ -115,8 +115,8 @@
   const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
   orbitGroup.add(particleSystem);
 
-  // Position the 3D group slightly offset for cinematic composition
-  orbitGroup.position.set(0, 0, 0);
+  // Position the 3D group behind the hero heading
+  orbitGroup.position.set(0, 4, 0);
 
   // Interactive Mouse Physics
   let mouseX = 0;
@@ -129,6 +129,14 @@
   window.addEventListener('mousemove', (e) => {
     mouseX = (e.clientX - windowHalfX) * 0.0006;
     mouseY = (e.clientY - windowHalfY) * 0.0006;
+  }, { passive: true });
+
+  // Scroll-driven fade out so 3D elements never interfere with text below hero
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    orbitGroup.position.y = 4 + scrollY * 0.015;
+    const fade = Math.max(0, 1 - (scrollY / 500));
+    renderer.domElement.style.opacity = (fade * 0.7).toString();
   }, { passive: true });
 
   // Responsive Resize
