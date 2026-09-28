@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbit — The Zero-Telemetry Web Browser | Browse Without the Noise</title>
+  <meta name="description" content="Orbit is a minimal, privacy-focused web browser engineered for pure speed, zero cloud telemetry, and distraction-free clarity. Available for Mac and Android.">
+  <meta name="keywords" content="Orbit browser, privacy browser, fast browser, zero telemetry, minimalist browser, Android browser APK, Mac browser">
+  <meta name="author" content="Parveen Kumar">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Orbit — The Zero-Telemetry Web Browser">
+  <meta property="og:description" content="Chrome tracks you. Brave pushes crypto. Arc got complicated. Orbit strips away the circus—delivering an uncompromisingly fast, local-first browser.">
+  <meta property="og:image" content="assets/images/hero-showcase.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orbit — Browse Without the Noise">
+  <meta name="twitter:description" content="Minimal, privacy-focused web browser engineered for pure focus. Download for Mac and Android.">
+  <meta name="twitter:image" content="assets/images/hero-showcase.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
+  <link rel="apple-touch-icon" href="assets/icons/logo.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Subtle Film Grain Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="site-nav" id="mainNav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand" aria-label="Orbit Home">
+        <img src="assets/icons/logo.png" alt="Orbit Browser Icon" class="brand-icon">
+        <span class="brand-name">ORBIT</span>
+        <span class="brand-badge">v1.0.1</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#simulator" class="nav-link">Experience</a></li>
+        <li><a href="#credibility" class="nav-link">Performance</a></li>
+        <li><a href="#philosophy" class="nav-link">Principles</a></li>
+        <li><a href="#mobile" class="nav-link">Mobile APK</a></li>
+        <li><a href="#comparison" class="nav-link">Comparison</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#download" class="btn btn-sm btn-primary" id="navDownloadBtn">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span id="navBtnLabel">Download Orbit</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-glow-blob" aria-hidden="true"></div>
+    <div class="container hero-content">
+      
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        <span>Orbit 1.0.1 — Open Source & Zero Dev-Tracking</span>
+      </div>
+
+      <h1 class="hero-title">
+        BROWSE FREE.<br>
+        <span class="line-gradient">ZERO TRACKING.</span><br>
+        <span class="text-gradient">PURE SPEED.</span>
+      </h1>
+
+      <p class="hero-sub">
+        An open-source, privacy-first browser built without the surveillance circus.<br>
+        <strong>Zero tracking from our side.</strong> Engineered for fast form filling, effortless bookmark saving & restoring, and pure distraction-free web speed.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#download" class="btn btn-lg btn-primary" id="primaryHeroCta">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span id="primaryCtaText">Download for Mac</span>
+        </a>
+
+        <a href="downloads/Orbit.apk" download="Orbit.apk" class="btn btn-lg btn-glass" id="directApkCta">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+          <span>Direct Android APK (28 MB)</span>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <svg class="meta-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>100% Open Source</span>
+        </div>
+        <div class="meta-item">
+          <svg class="meta-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>No Dev-Side Tracking</span>
+        </div>
+        <div class="meta-item">
+          <svg class="meta-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Fast Form Fill & Bookmarks</span>
+        </div>
+      </div>
+
+      <!-- Interactive Hero Browser Mockup -->
+      <div class="hero-mockup-wrapper" id="simulator">
+        <div class="mockup-inner">
+          
+          <!-- Mockup Chrome Header -->
+          <div class="browser-chrome">
+            <div class="window-controls">
+              <span class="control-dot close"></span>
+              <span class="control-dot min"></span>
+              <span class="control-dot max"></span>
+            </div>
+
+            <!-- Interactive Tab Bar -->
+            <div class="browser-tabs" role="tablist">
+              <button class="tab active" id="tabBtn1" role="tab" aria-selected="true" onclick="switchSimulatorTab(1)">
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                <span>Clean Canvas</span>
+              </button>
+              <button class="tab" id="tabBtn2" role="tab" aria-selected="false" onclick="switchSimulatorTab(2)">
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Zero Telemetry Monitor</span>
+              </button>
+              <button class="tab" id="tabBtn3" role="tab" aria-selected="false" onclick="switchSimulatorTab(3)">
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <span>Hardware Efficiency</span>
+              </button>
+            </div>
+
+            <!-- Address Bar Simulator -->
+            <div class="browser-url-bar">
+              <div class="url-left">
+                <span class="shield-badge">
+                  <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>Shield 0-Trackers</span>
+                </span>
+                <span id="simulatorUrlText">orbit://start</span>
+              </div>
+              <span class="text-muted" style="font-size: 0.75rem;">⌘K</span>
+            </div>
+          </div>
+
+          <!-- Browser Viewport Canvas -->
+          <div class="browser-canvas">
+            
+            <!-- View 1: Clean Canvas & Search Engine Freedom -->
+            <div class="canvas-tab-view active" id="canvasView1">
+              <div class="canvas-search-pill">
+                <span id="activeEngineIcon" style="font-size: 1.1rem; margin-right: -0.25rem;">🦆</span>
+                <input type="text" id="simSearchInput" placeholder="Search freely or enter URL..." value="Search without developer tracking" readonly>
+                <span class="text-muted mono" style="font-size: 0.75rem; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px;">Enter</span>
+              </div>
+
+              <!-- Search Engine Choice Selector -->
+              <div style="margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.25rem;">Default Engine:</span>
+                <button class="engine-pill active" onclick="selectSearchEngine('duckduckgo', '🦆', 'DuckDuckGo')">DuckDuckGo</button>
+                <button class="engine-pill" onclick="selectSearchEngine('google', '🔍', 'Google')">Google</button>
+                <button class="engine-pill" onclick="selectSearchEngine('brave', '🦁', 'Brave Search')">Brave</button>
+                <button class="engine-pill" onclick="selectSearchEngine('startpage', '🛡️', 'Startpage')">Startpage</button>
+                <button class="engine-pill" onclick="selectSearchEngine('bing', '🔷', 'Bing')">Bing</button>
+              </div>
+
+              <div class="canvas-shortcuts">
+                <a href="#credibility" class="shortcut-item">
+                  <div class="shortcut-circle">⚡</div>
+                  <span>Fast Forms</span>
+                </a>
+                <a href="#philosophy" class="shortcut-item">
+                  <div class="shortcut-circle">🔖</div>
+                  <span>Bookmarks</span>
+                </a>
+                <a href="#mobile" class="shortcut-item">
+                  <div class="shortcut-circle">📱</div>
+                  <span>Android APK</span>
+                </a>
+                <a href="#download" class="shortcut-item">
+                  <div class="shortcut-circle">🛡️</div>
+                  <span>Zero Tracking</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- View 2: Zero Telemetry Monitor -->
+            <div class="canvas-tab-view" id="canvasView2">
+              <div class="telemetry-logger">
+                <div class="logger-header">
+                  <span>OUTBOUND NETWORK PACKET INSPECTOR</span>
+                  <span class="mono" style="color: #34D399;">STATUS: 0 LEAKS</span>
+                </div>
+                <div class="logger-row blocked">
+                  <span>Google Analytics (analytics.google.com)</span>
+                  <span>BLOCKED AT ENGINE</span>
+                </div>
+                <div class="logger-row blocked">
+                  <span>Facebook Pixel (connect.facebook.net)</span>
+                  <span>BLOCKED AT ENGINE</span>
+                </div>
+                <div class="logger-row blocked">
+                  <span>Telemetry Heartbeat (telemetry.browser.internal)</span>
+                  <span>DISABLED (CODE REMOVED)</span>
+                </div>
+                <div class="logger-row blocked">
+                  <span>Crash Report Uploader (crash.service.cloud)</span>
+                  <span>DISABLED (LOCAL LOGS ONLY)</span>
+                </div>
+                <div class="logger-row" style="color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.5rem; padding-top: 0.5rem;">
+                  <span>Outbound Cloud Fingerprinting Packets:</span>
+                  <span class="mono" style="color: #FFFFFF; font-weight: 700;">0 BYTES TRANSMITTED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View 3: Hardware Efficiency -->
+            <div class="canvas-tab-view" id="canvasView3">
+              <div style="max-width: 540px; width: 100%; text-align: left;">
+                <h4 style="font-size: 1.1rem; color: #FFFFFF; margin-bottom: 1.25rem;">Memory Allocation Benchmark (5 Open Tabs)</h4>
+                
+                <div style="margin-bottom: 1rem;">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.35rem;">
+                    <span style="color: #34D399; font-weight: 600;">Orbit Browser (Local Core)</span>
+                    <span class="mono" style="color: #34D399;">68 MB</span>
+                  </div>
+                  <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;">
+                    <div style="width: 14%; height: 100%; background: #10B981; border-radius: 4px;"></div>
+                  </div>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.35rem;">
+                    <span style="color: var(--text-secondary);">Brave Browser</span>
+                    <span class="mono" style="color: var(--text-secondary);">320 MB</span>
+                  </div>
+                  <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;">
+                    <div style="width: 60%; height: 100%; background: #F59E0B; border-radius: 4px;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.35rem;">
+                    <span style="color: var(--text-secondary);">Google Chrome</span>
+                    <span class="mono" style="color: #F87171;">540 MB</span>
+                  </div>
+                  <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;">
+                    <div style="width: 95%; height: 100%; background: #EF4444; border-radius: 4px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Empirical Authority & Credibility Section -->
+  <section class="credibility-section" id="credibility">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag green">Empirical Proof</span>
+        <h2 class="section-title">Authority Isn't Claimed.<br>It's Engineered.</h2>
+        <p class="section-desc">
+          We don't ask you to blindly trust our privacy and speed promises. We engineered the architecture so that the metrics speak for themselves.
+        </p>
+      </div>
+
+      <div class="metrics-grid">
+        
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Outbound Telemetry</span>
+            <div class="metric-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+          </div>
+          <div class="metric-value-huge text-gradient">0</div>
+          <p class="metric-comparison">
+            Packets sent to corporate servers. <strong>100% on-device</strong> data sovereignty.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Cold Boot Startup</span>
+            <div class="metric-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+          </div>
+          <div class="metric-value-huge">120ms</div>
+          <p class="metric-comparison">
+            Instantaneous window render. <strong>9.5x faster</strong> than Chrome's 1.15s initialization.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">RAM Footprint</span>
+            <div class="metric-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+          </div>
+          <div class="metric-value-huge">68MB</div>
+          <p class="metric-comparison">
+            Idle memory consumption. <strong>3.8x lower</strong> memory pressure on your machine.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Installer Size</span>
+            <div class="metric-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+          </div>
+          <div class="metric-value-huge">28MB</div>
+          <p class="metric-comparison">
+            Clean native Android APK package. <strong>Zero bloatware</strong>, zero tracking libraries.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Side-by-Side Comparison Matrix -->
+      <div class="comparison-wrapper" id="comparison">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 32%;">Core Architectural Standards</th>
+              <th class="highlight" style="width: 22%;">Orbit Browser</th>
+              <th style="width: 15%;">Google Chrome</th>
+              <th style="width: 15%;">Brave Browser</th>
+              <th style="width: 16%;">Arc Browser</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Zero Cloud Telemetry</strong><br><span class="text-muted" style="font-size: 0.8rem;">No tracking pings sent to mothership</span></td>
+              <td class="highlight"><span class="check-green">✓ Absolute Zero</span></td>
+              <td><span class="cross-red">✕ Constant Tracking</span></td>
+              <td><span class="tag-caution">Partial (Opt-out)</span></td>
+              <td><span class="cross-red">✕ Account Required</span></td>
+            </tr>
+            <tr>
+              <td><strong>No Crypto or Web3 Clutter</strong><br><span class="text-muted" style="font-size: 0.8rem;">Clean canvas without token wallets or ads</span></td>
+              <td class="highlight"><span class="check-green">✓ 100% Pure Web</span></td>
+              <td><span class="check-green">✓ None</span></td>
+              <td><span class="cross-red">✕ BAT & Crypto Promoted</span></td>
+              <td><span class="check-green">✓ None</span></td>
+            </tr>
+            <tr>
+              <td><strong>Idle RAM Overhead</strong><br><span class="text-muted" style="font-size: 0.8rem;">Tested with 5 typical active tabs</span></td>
+              <td class="highlight"><span class="check-green">✓ ~68 MB</span></td>
+              <td><span class="cross-red">✕ 540 MB+</span></td>
+              <td><span class="tag-caution">~320 MB</span></td>
+              <td><span class="cross-red">✕ 620 MB+</span></td>
+            </tr>
+            <tr>
+              <td><strong>Local Data Sanctuary</strong><br><span class="text-muted" style="font-size: 0.8rem;">Bookmarks, history & passwords stay local</span></td>
+              <td class="highlight"><span class="check-green">✓ 100% On-Device</span></td>
+              <td><span class="cross-red">✕ Cloud Account Sync</span></td>
+              <td><span class="tag-caution">Sync Chain</span></td>
+              <td><span class="cross-red">✕ Cloud Mandatory</span></td>
+            </tr>
+            <tr>
+              <td><strong>Native Android APK Available</strong><br><span class="text-muted" style="font-size: 0.8rem;">Independent direct installer for mobile</span></td>
+              <td class="highlight"><span class="check-green">✓ Direct Download (28MB)</span></td>
+              <td><span class="tag-caution">Play Store Only</span></td>
+              <td><span class="tag-caution">Play Store Only</span></td>
+              <td><span class="cross-red">✕ Limited Support</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- The Three Engineering Principles (Manifesto) -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-tag purple">Core Manifesto</span>
+        <h2 class="section-title">The Three Inviolable Tenets</h2>
+        <p class="section-desc">
+          Orbit was not built to be another browser. It was built as a conscious rebellion against modern software entropy.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        
+        <div class="pillar-card">
+          <span class="pillar-num">01 / OPEN SOURCE & PRIVACY</span>
+          <h3 class="pillar-title">Zero Dev-Side Tracking</h3>
+          <p class="pillar-desc">
+            Orbit is open source and built with pure respect for privacy. There are zero tracking beacons, zero analytics SDKs, and zero telemetry code from our side. What you browse stays strictly between you and your screen.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">02 / PRODUCTIVITY</span>
+          <h3 class="pillar-title">Fast Form Filling</h3>
+          <p class="pillar-desc">
+            Tired of repetitive typing on mobile and desktop? Orbit features lightning-fast form filling so you can checkout, log in, and submit forms in one tap—without handing your identity over to big-tech surveillance.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <span class="pillar-num">03 / UTILITY</span>
+          <h3 class="pillar-title">Bookmarks Save & Restore</h3>
+          <p class="pillar-desc">
+            Cloud conveniences are kept strictly minimal and useful: effortlessly save your favorite sites and restore them cleanly across devices whenever you need. Simple, reliable, and completely free of tracking bloat.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Mobile First-Class Citizen Showcase (Android APK Focus) -->
+  <section class="mobile-section" id="mobile">
+    <div class="container mobile-layout">
+      
+      <div class="mobile-content">
+        <div class="mobile-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Android First-Class Citizen</span>
+        </div>
+
+        <h2 class="section-title" style="text-align: left;">
+          The Web in Your Hand.<br>
+          <span class="text-gradient">Zero Compromise.</span>
+        </h2>
+
+        <p class="section-desc" style="text-align: left; margin: 0 0 2rem 0;">
+          Most mobile browsers are bloated desktop ports with tiny inaccessible controls and persistent Google ad-trackers. Orbit for Android was engineered from the ground up for ergonomic one-handed operation.
+        </p>
+
+        <ul class="mobile-features">
+          <li class="mobile-feat-item">
+            <div class="mobile-feat-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <div>
+              <div class="mobile-feat-title">Ergonomic Bottom Toolbar</div>
+              <div class="mobile-feat-desc">The address bar, tab switcher, and navigation live right beneath your thumb—never at the unreachable top edge.</div>
+            </div>
+          </li>
+
+          <li class="mobile-feat-item">
+            <div class="mobile-feat-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div>
+              <div class="mobile-feat-title">Hardware-Level Battery Savings</div>
+              <div class="mobile-feat-desc">By halting invasive third-party ad beacons and background data collection, Orbit saves up to 35% battery life during daily browsing.</div>
+            </div>
+          </li>
+
+          <li class="mobile-feat-item">
+            <div class="mobile-feat-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+            <div>
+              <div class="mobile-feat-title">Direct Independent APK Install</div>
+              <div class="mobile-feat-desc">Don't wait for store approvals. Download the verified 28MB APK package directly to your phone right now.</div>
+            </div>
+          </li>
+        </ul>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+          <a href="downloads/Orbit.apk" download="Orbit.apk" class="btn btn-primary btn-lg">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download Orbit.apk (v1.0.1)</span>
+          </a>
+          <span class="mono text-muted" style="font-size: 0.8rem;">28 MB &bull; Android 8.0+</span>
+        </div>
+
+      </div>
+
+      <div class="mobile-preview-frame">
+        <img src="assets/images/mobile-showcase.jpg" alt="Orbit Mobile Browser Interface on Android" class="mobile-render-img">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Verification & Cryptographic Honesty -->
+  <section class="technical-section">
+    <div class="container container-narrow">
+      <div class="checksum-card">
+        
+        <div class="checksum-header">
+          <div class="checksum-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Cryptographic Integrity Verification</span>
+          </div>
+          <span class="platform-tag green">OFFICIAL BUILD 2002</span>
+        </div>
+
+        <p class="text-secondary" style="font-size: 0.9rem; line-height: 1.6;">
+          In high-security software, trust must be verifiable. You can independently verify the cryptographic checksum of the downloaded <span class="mono" style="color: #FFFFFF;">Orbit.apk</span> against this exact SHA-256 hash before installing:
+        </p>
+
+        <div class="hash-box">
+          <span id="apkSha256">932e81871003b12ccda0f6c17f5816a1bcaf13482fda6273d187c08dcf748bb4</span>
+          <button class="copy-hash-btn" onclick="copyChecksum()" id="copyHashBtn">Copy Hash</button>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 0.5rem;">
+          <span>Target Architecture: <strong style="color: var(--text-secondary);">arm64-v8a / armeabi-v7a</strong></span>
+          <span>Signing: <strong style="color: var(--text-secondary);">v2 + v3 Verified</strong></span>
+          <span>Package: <strong style="color: var(--text-secondary);">parveenengg.orbit</strong></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="faq-section" id="faq">
+    <div class="container container-narrow">
+      
+      <div class="section-header">
+        <span class="section-tag">Clarity</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">
+          Everything you need to know about switching your daily browsing to Orbit.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        
+        <div class="faq-item open">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Why should I switch from Chrome or Brave to Orbit?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Chrome is an advertising company's operating system disguised as a browser; it gathers telemetry on your browsing habits and consumes gigabytes of RAM. Brave pioneered ad blocking, but burdened users with cryptocurrency wallets, BAT tokens, and sponsored start-page promotions. Orbit gives you the speed and privacy of Brave with the pure, distraction-free aesthetic of Apple and Linear—with zero crypto and zero telemetry.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Is Orbit really 100% free of cloud tracking?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. We do not operate remote telemetry servers, tracking pings, or analytics endpoints. All browsing history, site cookies, and tab states are preserved strictly on your local device storage.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How do I install the Android APK?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            1. Tap "Download Orbit.apk" on your Android device.<br>
+            2. When the download completes, tap the file in your notification panel or Downloads folder.<br>
+            3. If prompted by Android, grant permission to "Install unknown apps" from your browser/files app.<br>
+            4. Tap Install. Orbit is ready for instant use.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>When will Orbit be available on the Google Play Store?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            The Google Play Store listing is currently undergoing final store policy review. The direct APK provided on this site is built from the exact same release pipeline and is fully signed and verified for direct installation today.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What platforms are supported?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Currently, Orbit is available for Android (via direct APK) and macOS (Apple Silicon M-series & Intel). Windows and Linux native builds are actively underway.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer & Universal Download Matrix -->
+  <footer class="site-footer" id="download">
+    <div class="container">
+      
+      <!-- Big Closing Conversion Hero Box -->
+      <div class="footer-hero-box">
+        <h2 class="footer-hero-title">
+          Ready to Make the<br>
+          <span class="text-gradient">Obvious Choice?</span>
+        </h2>
+        <p class="footer-hero-sub">
+          Experience the internet without the advertising circus, memory leaks, and surveillance. Fast, serene, and engineered for focus.
+        </p>
+
+        <!-- Platform Matrix Grid -->
+        <div class="download-matrix">
+          
+          <!-- Mac Card -->
+          <div class="download-card highlight">
+            <div class="card-top">
+              <div class="platform-header">
+                <span class="platform-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.87-.9.04-2 .6-2.65 1.35-.58.65-1.09 1.71-1.05 2.74 1.01.08 2.07-.47 2.69-1.22z"/></svg>
+                  <span>macOS</span>
+                </span>
+                <span class="platform-tag">UNIVERSAL</span>
+              </div>
+              <p class="platform-desc">
+                Native build optimized for Apple Silicon (M1/M2/M3/M4) and Intel Macs. macOS 12 Monterey or later.
+              </p>
+            </div>
+            <a href="#simulator" class="btn btn-primary btn-sm" onclick="showPlatformNotice('mac')">
+              Download .DMG
+            </a>
+          </div>
+
+          <!-- Android Card -->
+          <div class="download-card highlight">
+            <div class="card-top">
+              <div class="platform-header">
+                <span class="platform-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                  <span>Android</span>
+                </span>
+                <span class="platform-tag green">APK READY NOW</span>
+              </div>
+              <p class="platform-desc">
+                Google Play Store release is currently in progress. You can install the official verified APK (v1.0.1 • 28MB) directly on your device right now.
+              </p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <a href="downloads/Orbit.apk" download="Orbit.apk" class="btn btn-glow btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Direct APK Download (28MB)</span>
+              </a>
+              <span style="font-size: 0.75rem; color: #FCD34D; display: flex; align-items: center; justify-content: center; gap: 0.35rem; font-weight: 500;">
+                <span>⏳ Google Play Store Link: In Progress</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Windows & Linux Card -->
+          <div class="download-card">
+            <div class="card-top">
+              <div class="platform-header">
+                <span class="platform-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  <span>Windows & Linux</span>
+                </span>
+                <span class="platform-tag amber">COMING SOON</span>
+              </div>
+              <p class="platform-desc">
+                64-bit native builds currently in active closed beta testing. Register for early access notification.
+              </p>
+            </div>
+            <a href="mailto:parveen@parveenkumar.co?subject=Orbit%20Early%20Access%20Request" class="btn btn-glass btn-sm">
+              Notify on Release
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Links -->
+      <div class="footer-bottom-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <img src="assets/icons/logo.png" alt="Orbit Logo" style="width: 28px; height: 28px; border-radius: 6px;">
+            <span style="font-weight: 700; color: #FFFFFF; font-size: 1.1rem; letter-spacing: -0.02em;">ORBIT</span>
+          </div>
+          <p class="footer-bio-desc">
+            Engineered by Parveen Kumar under the Obvious Choice philosophy. Building authority systems and digital tools that respect human attention.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-col-links">
+            <li><a href="#simulator">Live Simulator</a></li>
+            <li><a href="#credibility">Benchmarks</a></li>
+            <li><a href="#philosophy">Engineering Manifesto</a></li>
+            <li><a href="#mobile">Android APK</a></li>
+            <li><a href="#comparison">Compare Browsers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Downloads & Trust</h4>
+          <ul class="footer-col-links">
+            <li><a href="downloads/Orbit.apk" download="Orbit.apk">Direct Android APK (28MB)</a></li>
+            <li><a href="#download">macOS Universal DMG</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="#faq">Installation Guide</a></li>
+            <li><a href="#faq">Zero-Data Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <span>&copy; 2026 Orbit Browser. All rights reserved. Zero telemetry recorded.</span>
+        <span>Crafted with intentional minimalism by <a href="https://github.com/parveenengg" target="_blank" rel="noopener" style="color: var(--text-secondary); text-decoration: underline;">Parveen Kumar</a>.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Notification Toast for Copied Checksums / Notices -->
+  <div id="toastNotification" style="position: fixed; bottom: 2rem; right: 2rem; background: rgba(14, 14, 22, 0.95); border: 1px solid rgba(59, 130, 246, 0.4); color: #FFFFFF; padding: 0.9rem 1.4rem; border-radius: 12px; font-size: 0.9rem; box-shadow: 0 10px 30px rgba(0,0,0,0.6); backdrop-filter: blur(12px); transform: translateY(120px); opacity: 0; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1000; display: flex; align-items: center; gap: 0.75rem;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMessage">SHA-256 hash copied to clipboard!</span>
+  </div>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
