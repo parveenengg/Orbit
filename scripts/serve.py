@@ -33,7 +33,13 @@ class CleanUrlHandler(http.server.SimpleHTTPRequestHandler):
             clean_path = "/"
         if clean_path in REWRITES:
             path = REWRITES[clean_path]
-        return super().translate_path(path)
+        else:
+            path = clean_path
+
+        resolved = super().translate_path(path)
+        if not os.path.exists(resolved) and os.path.exists(resolved + ".html"):
+            return resolved + ".html"
+        return resolved
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else PORT

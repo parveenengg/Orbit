@@ -16,31 +16,31 @@
     },
     {
       "source": "/about",
-      "destination": "/pages/about.html"
+      "destination": "/pages/about"
     },
     {
       "source": "/features",
-      "destination": "/pages/features.html"
+      "destination": "/pages/features"
     },
     {
       "source": "/download",
-      "destination": "/pages/download.html"
+      "destination": "/pages/download"
     },
     {
       "source": "/opensource",
-      "destination": "/pages/opensource.html"
+      "destination": "/pages/opensource"
     },
     {
       "source": "/privacy",
-      "destination": "/pages/privacy.html"
+      "destination": "/pages/privacy"
     },
     {
       "source": "/manifesto",
-      "destination": "/pages/manifesto.html"
+      "destination": "/pages/manifesto"
     },
     {
       "source": "/documentation",
-      "destination": "/pages/documentation.html"
+      "destination": "/pages/documentation"
     }
   ]
 }

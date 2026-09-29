@@ -46,11 +46,11 @@ shasum -a 256 downloads/Orbit.apk
 ## 🚀 Running the Landing Page Locally
 
 ```bash
-# Start local server
-python3 -m http.server 8080 --bind 127.0.0.1
+# Start local dev server (with clean route rewrites matching Vercel)
+python3 scripts/serve.py
 
 # Open in your browser
-http://127.0.0.1:8080
+http://localhost:8000
 ```
 
 ---
