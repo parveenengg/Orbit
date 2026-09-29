@@ -13,6 +13,34 @@
     {
       "source": "/home",
       "destination": "/"
+    },
+    {
+      "source": "/about",
+      "destination": "/pages/about.html"
+    },
+    {
+      "source": "/features",
+      "destination": "/pages/features.html"
+    },
+    {
+      "source": "/download",
+      "destination": "/pages/download.html"
+    },
+    {
+      "source": "/opensource",
+      "destination": "/pages/opensource.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/pages/privacy.html"
+    },
+    {
+      "source": "/manifesto",
+      "destination": "/pages/manifesto.html"
+    },
+    {
+      "source": "/documentation",
+      "destination": "/pages/documentation.html"
     }
   ]
 }
