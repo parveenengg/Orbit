@@ -7,11 +7,12 @@
       "source": "/index",
       "destination": "/",
       "permanent": true
-    },
+    }
+  ],
+  "rewrites": [
     {
       "source": "/home",
-      "destination": "/",
-      "permanent": true
+      "destination": "/"
     }
   ]
 }
