@@ -1,0 +1,34 @@
+
+.download-intro { min-height: 70svh; }
+.download-intro h1 { max-width: 1000px; }
+.download-intro .ep-lead { max-width: 580px; }
+.release-section { scroll-margin-top: 100px; overflow: hidden; }
+.release-layout { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 6rem; }
+.release-copy { max-width: 450px; color: #aab4c3; font-size: 1.1rem; line-height: 1.8; }
+.ep-light .release-copy { color: #536072; }
+.release-availability { display: flex; align-items: center; gap: .6rem; margin: 2rem 0 1rem; font-size: .82rem; }
+.release-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #8b98aa; }
+.release-note { color: #9aa7b9; font-size: .82rem; line-height: 1.7; max-width: 390px; margin-top: 1rem; }
+.ep-light .release-note { color: #626e7f; }
+.release-phone { width: min(255px,100%); margin: auto; padding: 5px; border: 1px solid #556070; border-radius: 26px; background: #0b0e12; box-shadow: 0 24px 60px #111b2830; }
+.release-phone img { width: 100%; height: auto; display: block; border-radius: 21px; }
+.release-layout-mac { grid-template-columns: 1fr 1.35fr; gap: 4rem; }
+.release-mac { position: relative; padding: 8px; border: 1px solid #657081; border-radius: 12px 12px 3px 3px; background: #141923; }
+.release-mac img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.release-mac-camera { height: 6px; width: 10%; margin: -3px auto 5px; background: #030508; border-radius: 0 0 4px 4px; }
+.release-mac::after { content: ''; position: absolute; width: 110%; left: -5%; top: 100%; height: 10px; background: linear-gradient(#d9dde4,#808b9b); border-radius: 0 0 8px 8px; }
+.release-archive-details { max-width: 900px; margin: 3rem auto 1rem; text-align: left; border-block: 1px solid #bbc4d0; }
+.release-archive-details summary { padding: 1.5rem 0; cursor: pointer; display: flex; justify-content: space-between; list-style: none; font-size: 1.1rem; }
+.release-archive-details summary::-webkit-details-marker { display: none; }
+.release-archive-details[open] summary > span { transform: rotate(45deg); }
+.release-archive-entry { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: .5rem 0 2rem; }
+.release-archive-entry h3 { font-size: 1.15rem; margin-bottom: .6rem; }
+.release-archive-entry p { font-size: .9rem; margin: 0; }
+@media(max-width:900px) {
+ .download-intro { min-height: 0; padding-bottom: 4rem; }
+ .release-layout,.release-layout-mac { grid-template-columns: 1fr; gap: 3rem; }
+ .release-phone { width: 220px; }
+ .release-mac { width: min(600px,90%); margin: 0 auto 1rem; }
+ .release-archive-entry { flex-direction: column; align-items: flex-start; }
+ .release-copy { font-size: 1rem; }
+}

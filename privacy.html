@@ -3,137 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy — How Orbit Handles Your Data</title>
-  <meta name="description" content="Learn exactly how Orbit protects your privacy. Factual, transparent, and completely verifiable.">
+  <title>Privacy · Orbit Browser</title>
+  <meta name="description" content="Understand Orbit’s privacy commitments, browser controls, and the separate data practices of websites and search engines.">
   <meta name="author" content="Parveen Kumar">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/orbit-circle.png">
-
-  <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .privacy-hero {
-      padding-top: 10rem;
-      padding-bottom: 4rem;
-      text-align: center;
-    }
-    
-    .privacy-content {
-      max-width: 760px;
-      margin: 0 auto;
-      padding-bottom: 6rem;
-    }
-    
-    .privacy-section {
-      margin-bottom: 4rem;
-    }
-    
-    .privacy-section h3 {
-      font-size: 1.75rem;
-      margin-bottom: 1.25rem;
-      border-bottom: 1px solid var(--orbit-border);
-      padding-bottom: 0.5rem;
-    }
-    
-    .privacy-section p {
-      color: var(--orbit-text-secondary);
-      margin-bottom: 1.25rem;
-      line-height: 1.6;
-    }
-  </style>
+  <link rel="stylesheet" href="orbit-pages.css?v=4">
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="orbit-ui.css?v=16">
 </head>
-<body>
+<body class="theme-dark editorial-page">
 
   <!-- Navigation -->
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-brand" aria-label="Orbit Home">
+      <a href="/" class="nav-brand" aria-label="Orbit Home">
         <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
         <span class="brand-name">Orbit</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="features.html" class="nav-link">Features</a></li>
-        <li><a href="privacy.html" class="nav-link">Privacy</a></li>
-        <li><a href="opensource.html" class="nav-link">Open Source</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="/features" class="nav-link">Features</a></li>
+        <li><a href="/privacy" class="nav-link active">Privacy</a></li>
+        <li><a href="/opensource" class="nav-link">Open Source</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="download.html" class="btn btn-primary">Download</a>
+        <a href="/download" class="btn btn-primary">Download</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="privacy-hero">
-    <div class="container">
-      <h1 class="hero-title">Privacy</h1>
-      <p class="section-sub">Factual transparency regarding your data.</p>
-    </div>
-  </header>
 
-  <!-- Privacy Content -->
-  <main class="container privacy-content">
-    
-    <!-- Privacy Data Flow Visualization -->
-    <div class="privacy-diagram" style="margin-bottom: 6rem; padding: 4rem 2rem; border-radius: 20px; border: 1px solid var(--orbit-border); width: 100%; box-sizing: border-box;">
-      <h2 class="privacy-title">YOUR BROWSING</h2>
-      <div class="privacy-flow">
-        <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="flow-icon">
-        <div class="flow-line"></div>
-        <span class="flow-text">stays here</span>
-        <div class="flow-line"></div>
-        <div class="flow-arrow">▼</div>
-        <div class="flow-device">
-          [ YOUR DEVICE ]
-        </div>
-      </div>
-      <div class="privacy-pillars mt-5">
-        <div class="pillar">
-          <span class="pillar-label">History</span>
-          <strong class="pillar-value">LOCAL</strong>
-        </div>
-        <div class="pillar">
-          <span class="pillar-label">Permissions</span>
-          <strong class="pillar-value">CONTROLLED</strong>
-        </div>
-        <div class="pillar">
-          <span class="pillar-label">Data</span>
-          <strong class="pillar-value">YOURS</strong>
-        </div>
-      </div>
-    </div>
-
-    <section class="privacy-section">
-      <h3>What stays on your device</h3>
-      <p>Your browsing history, site data, cache, and local storage stay entirely on your device. Orbit does not sync or transmit your browsing activity to any external server or corporate cloud.</p>
-    </section>
-
-    <section class="privacy-section">
-      <h3>Telemetry & Analytics</h3>
-      <p>Orbit does not use developer-side telemetry. We do not track how many tabs you open, which settings you change, or how long you use the browser. We rely on community feedback rather than silent background analytics.</p>
-    </section>
-
-    <section class="privacy-section">
-      <h3>Site Permissions</h3>
-      <p>You have full, granular control over site permissions. Any website requesting access to your camera, microphone, or location must be explicitly approved by you. You can revoke these permissions at any time through the Settings interface.</p>
-    </section>
-
-    <section class="privacy-section">
-      <h3>Search Engines</h3>
-      <p>By default, Orbit allows you to choose your preferred search engine (such as DuckDuckGo, Brave Search, Startpage, Google, or Bing). When you search, your queries are subject to the privacy policy of the search engine you have chosen.</p>
-    </section>
-
-    <section class="privacy-section">
-      <h3>Data Deletion</h3>
-      <p>You can instantly wipe your browsing history, cookies, cache, and site data through the "Clear Browsing Data" option in Settings. Once deleted, this data cannot be recovered.</p>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
+<header class="ep-hero"><div class="ep-wrap ep-hero-grid"><div><span class="ep-kicker">PRIVACY / A CLEARER BOUNDARY</span><h1><span>Your browser.</span><span class="ep-soft">Your business.</span></h1><p class="ep-lead">Orbit is built around a simple commitment: your browsing should not become something the browser sells.</p><div class="ep-actions"><a href="#privacy-boundary" class="btn btn-primary">Understand the boundary <span aria-hidden="true">↗</span></a><a href="https://github.com/parveenengg/Orbit" class="btn btn-secondary">Follow on GitHub <span aria-hidden="true">↗</span></a></div></div><div class="ep-orbital" aria-hidden="true"><i class="ep-orbital-ring"></i><i class="ep-orbital-ring"></i><i class="ep-orbital-ring"></i><span class="ep-orbital-center">◎</span><span class="ep-orbital-caption">YOUR DEVICE · YOUR CHOICES</span></div></div></header>
+<main>
+<div class="ep-wrap ep-rail"><span>Independent by design</span><span>Open-source development</span><span>Clear about the limits</span></div>
+<section class="ep-section ep-light" id="privacy-boundary"><div class="ep-wrap"><div class="ep-section-intro" data-reveal><span class="ep-kicker">01 / KNOW THE DIFFERENCE</span><h2>A browser is one part<br>of your privacy.</h2><p>Orbit, your search engine, and the sites you visit play different roles. Understanding that distinction helps you make better choices.</p></div><div class="ep-boundary">
+<article data-reveal><span class="ep-index">WITHIN ORBIT</span><h3>The browser’s responsibility.</h3><p>The project’s commitment is to avoid tracking by the developer and the sale of browsing data. Follow the project on GitHub to keep up with its development and raise questions.</p><ul><li>Choose your search engine.</li><li>Review browsing settings and history.</li><li>Use the available controls to clear browsing data.</li></ul></article>
+<article data-reveal><span class="ep-index">BEYOND THE BROWSER</span><h3>The wider web has its own rules.</h3><p>Search providers and websites can receive the requests you send, along with information you share or make available to them. Their accounts, cookies, and privacy policies still matter.</p><ul><li>A search query goes to the provider you choose.</li><li>Signing in connects activity to that service.</li><li>Orbit does not promise anonymity across the web.</li></ul></article></div>
+<p class="ep-note">This page explains Orbit’s product principles and their boundaries. It is not a live network audit or a guarantee about external services.</p></div></section>
+<section class="ep-section"><div class="ep-wrap"><div class="ep-section-intro" data-reveal><span class="ep-kicker">02 / PRACTICAL CONTROL</span><h2>Small choices.<br>Meaningful control.</h2><p>Start with what you can review and change in your everyday browsing.</p></div><div class="ep-details">
+<details open><summary>Choose where your searches go</summary><p>Select a provider that suits you and review its privacy settings. Changing browsers does not change a search provider’s own data practices.</p></details>
+<details><summary>Review your history and browsing data</summary><p>Use Orbit’s browsing settings to review history and clear available categories of browsing data. Clearing local data does not erase information a website or search provider has already received.</p></details>
+<details><summary>Pay attention to site permissions</summary><p>Review permission requests in context. Only grant access when a website needs it for something you want to do; available controls can differ by platform.</p></details>
+<details><summary>Follow, question, and contribute</summary><p>GitHub is a place to follow progress and raise questions about the browser. If you identify a privacy concern, provide clear reproduction steps without posting private browsing information or credentials.</p></details>
+</div><a class="ep-text-link" href="/features">Explore the browser controls <span aria-hidden="true">↗</span></a></div></section>
+<section class="ep-close ep-light"><div class="ep-wrap" data-reveal><span class="ep-kicker">TRANSPARENCY IS A PRACTICE</span><h2>Look closer.</h2><p>Follow the project on GitHub. Ask questions. Help make Orbit better.</p><div class="ep-actions"><a href="/opensource" class="btn btn-primary">Open source <span aria-hidden="true">↗</span></a><a href="/features" class="btn btn-secondary">Explore features <span aria-hidden="true">↗</span></a></div></div></section></main>
   <footer class="site-footer">
     <div class="footer-bg-ring"></div>
     <div class="container relative">
@@ -150,8 +70,8 @@
         <div class="footer-col">
           <h4>Product</h4>
           <ul>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="download.html">Download</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/download">Download</a></li>
           </ul>
         </div>
 
@@ -159,24 +79,24 @@
           <h4>Open Source</h4>
           <ul>
             <li><a href="https://github.com/parveenengg/Orbit">Repository</a></li>
-            <li><a href="opensource.html">Contribute</a></li>
+            <li><a href="/opensource">Contribute</a></li>
             <li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li>
-            <li><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">License</a></li>
+            <li><a href="/documentation#license">License</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Trust</h4>
           <ul>
-            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="/documentation#privacy-policy">Privacy policy</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Project</h4>
           <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html#creator">Creator</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about#creator">Creator</a></li>
           </ul>
         </div>
       </div>
@@ -184,12 +104,15 @@
       <div class="footer-bottom flex-between">
         <p>&copy; 2026 Orbit Browser.</p>
         <div class="footer-legal-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">Licenses</a>
+          <a href="/documentation#privacy-policy">Privacy policy</a>
+          <a href="/documentation#license">License</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="app.js?v=arrival-zoom-1"></script>
+  <script src="orbit-pages.js?v=1"></script>
+  <script src="orbit-ui.js?v=5"></script>
 </body>
 </html>

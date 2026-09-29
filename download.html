@@ -3,130 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Orbit — Desktop & Android</title>
-  <meta name="description" content="Download the Orbit browser for macOS and Android.">
+  <title>Download Orbit: Desktop & Android</title>
+  <meta name="description" content="Download the Orbit browser for macOS and Android. Check platform availability and find earlier Android builds.">
   <meta name="author" content="Parveen Kumar">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/orbit-circle.png">
-
-  <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .download-hero {
-      padding-top: 10rem;
-      padding-bottom: 2rem;
-      text-align: center;
-    }
-    
-    .download-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto 6rem;
-    }
-    
-    .download-card {
-      background: var(--orbit-surface);
-      border: 1px solid var(--orbit-border);
-      border-radius: var(--orbit-radius-lg);
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    
-    .download-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .download-meta {
-      font-family: monospace;
-      color: var(--orbit-text-secondary);
-      font-size: 0.85rem;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-    
-    @media (max-width: 768px) {
-      .download-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="orbit-pages.css?v=5">
+  <link rel="stylesheet" href="download-page.css?v=1">
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="orbit-ui.css?v=16">
 </head>
-<body>
+<body class="theme-dark editorial-page download-page">
 
   <!-- Navigation -->
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-brand" aria-label="Orbit Home">
+      <a href="/" class="nav-brand" aria-label="Orbit Home">
         <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
         <span class="brand-name">Orbit</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="features.html" class="nav-link">Features</a></li>
-        <li><a href="privacy.html" class="nav-link">Privacy</a></li>
-        <li><a href="opensource.html" class="nav-link">Open Source</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="/features" class="nav-link">Features</a></li>
+        <li><a href="/privacy" class="nav-link">Privacy</a></li>
+        <li><a href="/opensource" class="nav-link">Open Source</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="download.html" class="btn btn-primary">Download</a>
+        <a href="/download" class="btn btn-primary">Download</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="download-hero">
-    <div class="container">
-      <h1 class="hero-title">Download Orbit</h1>
-      <p class="section-sub">Browse on your terms, wherever you go.</p>
-    </div>
-  </header>
-
-  <!-- Download Grid -->
-  <main class="container">
-    <div class="download-grid" style="margin-bottom: 2rem;">
-      
-      <!-- macOS -->
-      <div class="download-card">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 384 512" fill="currentColor" style="margin-bottom: 1rem;"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-        <h3>macOS</h3>
-        <div class="download-meta">
-          macOS 12.0+ (Universal)<br>
-          Version 1.0.1<br>
-        </div>
-        <a href="#" class="btn btn-primary btn-lg" style="width: 100%;">Download for macOS</a>
+  <header class="ep-hero download-intro"><div class="ep-wrap">
+    <span class="ep-kicker">DOWNLOAD / YOUR NEXT ORBIT</span>
+    <h1><span>A little more space.</span><span class="ep-soft">On your device.</span></h1>
+    <p class="ep-lead">Find your next Orbit, or return to a familiar version. Explore Android and macOS availability, with earlier Android builds collected below.</p>
+    <div class="ep-actions"><a href="#android" class="btn btn-primary">Android <span aria-hidden="true">↓</span></a><a href="#macos" class="btn btn-secondary">macOS <span aria-hidden="true">↓</span></a></div>
+    <a class="ep-text-link" href="#older-downloads">Previous versions <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main>
+    <section class="ep-section ep-light release-section" id="android" aria-labelledby="android-title"><div class="ep-wrap release-layout">
+      <div data-reveal><span class="ep-kicker">01 / ANDROID</span><h2 id="android-title">Your orbit.<br>In your pocket.</h2><p class="release-copy">A familiar place for your tabs, shortcuts, and personal preferences. Built for the way you browse on your phone.</p>
+        <div class="release-availability"><span class="release-status-dot" aria-hidden="true"></span>Google Play link coming soon</div>
+        <button class="btn btn-primary" type="button" disabled aria-describedby="android-status">Google Play · Coming soon</button>
+        <p id="android-status" class="release-note">The store link will appear here when it is ready to share.</p>
+        <a class="ep-text-link" href="#older-downloads">Looking for an earlier APK? <span aria-hidden="true">↗</span></a>
       </div>
-
-      <!-- Android -->
-      <div class="download-card">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 576 512" fill="currentColor" style="margin-bottom: 1rem;"><path d="M420.55,301.93a24,24,0,1,1,24-24,24,24,0,0,1-24,24m-265.1,0a24,24,0,1,1,24-24,24,24,0,0,1-24,24m273.7-144.48,47.94-83a10,10,0,1,0-17.27-10l-48.54,84.07a301.25,301.25,0,0,0-246.56,0L116.18,64.45a10,10,0,1,0-17.27,10l47.94,83C64.53,202.22,8.24,285.55,0,384H576c-8.24-98.45-64.54-181.78-146.85-226.55"/></svg>
-        <h3>Android</h3>
-        <div class="download-meta">
-          Android 8.0+<br>
-          Version 1.0.1 (APK)<br>
-          File size: 28MB
-        </div>
-        <a href="downloads/Orbit.apk" download="Orbit.apk" class="btn btn-secondary btn-lg" style="width: 100%;">Download APK</a>
+      <div class="release-phone" data-reveal><img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Android home screen with search and shortcuts" width="1080" height="2400" decoding="async"></div>
+    </div></section>
+    <section class="ep-section release-section" id="macos" aria-labelledby="macos-title"><div class="ep-wrap release-layout release-layout-mac">
+      <div data-reveal><span class="ep-kicker">02 / MACOS</span><h2 id="macos-title">Room to think.<br>Space to explore.</h2><p class="release-copy">Orbit on your Mac, delivered as a direct DMG download. No Mac App Store installation required.</p>
+        <div class="release-availability"><span class="release-status-dot" aria-hidden="true"></span>DMG download not available yet</div>
+        <button class="btn btn-primary" type="button" disabled aria-describedby="macos-status">Download for Mac · Coming soon</button>
+        <p id="macos-status" class="release-note">The installer, supported Macs, and verified checksum will be listed together when the file is available.</p>
       </div>
-
-    </div>
-
-    <!-- Coming Soon -->
-    <div class="text-center pb-10">
-      <p class="text-body">
-        <strong>Windows and Linux</strong> &mdash; Coming soon.
-      </p>
-    </div>
+      <div class="release-mac" data-reveal><div class="release-mac-camera" aria-hidden="true"></div><img src="assets/orbit-mac-interface.png" alt="Orbit running on macOS" width="1440" height="900" loading="lazy" decoding="async"></div>
+    </div></section>
+    <section class="ep-close ep-light release-archive" id="older-downloads"><div class="ep-wrap">
+      <span class="ep-kicker">PREVIOUS DOWNLOADS</span><h2>A place for earlier builds.</h2><p>Looking for a direct installation file? The existing Android APK remains available separately from the future Google Play release.</p>
+      <details class="release-archive-details"><summary>Android APK archive <span aria-hidden="true">+</span></summary><div class="release-archive-entry"><div><h3>Orbit for Android · v1.0.0</h3><p>APK file · Manual installation<br>Version 1.0.0 · Release date not listed.</p></div><a class="btn btn-primary" href="downloads/Orbit.apk" download="Orbit.apk">Download Orbit APK · v1.0.0 <span aria-hidden="true">↓</span></a></div></details>
+      <a class="ep-text-link" href="https://github.com/parveenengg/Orbit">Follow the project on GitHub <span aria-hidden="true">↗</span></a>
+    </div></section>
   </main>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="footer-bg-ring"></div>
     <div class="container relative">
@@ -143,8 +89,8 @@
         <div class="footer-col">
           <h4>Product</h4>
           <ul>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="download.html">Download</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/download">Download</a></li>
           </ul>
         </div>
 
@@ -152,24 +98,24 @@
           <h4>Open Source</h4>
           <ul>
             <li><a href="https://github.com/parveenengg/Orbit">Repository</a></li>
-            <li><a href="opensource.html">Contribute</a></li>
+            <li><a href="/opensource">Contribute</a></li>
             <li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li>
-            <li><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">License</a></li>
+            <li><a href="/documentation#license">License</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Trust</h4>
           <ul>
-            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="/documentation#privacy-policy">Privacy policy</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Project</h4>
           <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html#creator">Creator</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about#creator">Creator</a></li>
           </ul>
         </div>
       </div>
@@ -177,12 +123,15 @@
       <div class="footer-bottom flex-between">
         <p>&copy; 2026 Orbit Browser.</p>
         <div class="footer-legal-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">Licenses</a>
+          <a href="/documentation#privacy-policy">Privacy policy</a>
+          <a href="/documentation#license">License</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="app.js?v=arrival-zoom-1"></script>
+  <script src="orbit-ui.js?v=5"></script>
+  <script src="orbit-pages.js?v=1"></script>
 </body>
 </html>

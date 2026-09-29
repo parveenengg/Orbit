@@ -1,0 +1,100 @@
+/* Homepage chapters below the original galaxy and Mac showcase. */
+.home-page .ep-wrap { width: min(1100px,calc(100% - 4rem)); margin-inline: auto; }
+.home-content { position: relative; z-index: 2; overflow: clip; background: #07090e; }
+.home-benefits { padding: 7rem 0; background: #f0f2f5; color: #131b28; }
+.home-benefit-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: start; }
+.home-kicker { display: block; font-size: .68rem; line-height: 1.6; font-weight: 500; letter-spacing: .16em; color: #8daed8; text-transform: uppercase; }
+.home-benefits .home-kicker,.home-download .home-kicker { color: #536f94; }
+.home-heading { font-size: clamp(2.7rem,5.2vw,5rem); line-height: 1.03; letter-spacing: -.065em; font-weight: 500; margin: 1.6rem 0; }
+.home-intro p { color: #596578; line-height: 1.85; max-width: 370px; }
+.home-intro .btn { margin-top: 2rem; }
+.home-benefit-list { border-bottom: 1px solid #b7c1ce; }
+.home-benefit { display: grid; grid-template-columns: 30px 1fr; gap: 1.5rem; border-top: 1px solid #b7c1ce; padding: 1.8rem 0; }
+.home-benefit > span { font-size: .65rem; color: #607a9d; padding-top: .3rem; }
+.home-benefit h3 { font-size: 1.55rem; letter-spacing: -.035em; line-height: 1.2; font-weight: 500; margin-bottom: .7rem; }
+.home-benefit p { color: #596578; line-height: 1.8; font-size: .92rem; }
+.home-trust { padding: 7rem 0 0; background: radial-gradient(ellipse at 95% 0%,#263b5d30,transparent 45%),#090c12; }
+.home-trust-intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: end; }
+.home-trust-intro p { color: #a3aebf; line-height: 1.85; padding-bottom: 1.5rem; max-width: 400px; }
+.home-trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; }
+.home-trust-item { border-top: 1px solid #354153; padding: 2rem 0 4rem; }
+.home-trust-symbol { font-size: 2.8rem; line-height: 1; color: #9cb6d9; font-weight: 300; letter-spacing: -.1em; }
+.home-trust-item h3 { margin: 1.7rem 0 1rem; font-size: 1.9rem; letter-spacing: -.04em; font-weight: 500; }
+.home-trust-item p { color: #a3aebf; line-height: 1.85; max-width: 450px; }
+.home-link { display: inline-flex; gap: 2rem; color: #d7e3f4; text-decoration: none; border-bottom: 1px solid #5b708c; padding: .6rem 0; margin-top: 1.5rem; font-size: .85rem; }
+.home-link span { transition: transform .3s var(--ui-ease); }
+.home-link:hover span { transform: translate(4px,-3px); }
+.home-maker { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 2rem 0 3rem; border-top: 1px solid #354153; }
+.home-maker-identity { display: flex; align-items: center; gap: 1.25rem; }
+.home-maker-monogram { display: grid; place-items: center; width: 50px; height: 50px; border: 1px solid #4c5f79; border-radius: 50%; font-size: .9rem; color: #acc3e1; }
+.home-maker p { color: #e0e6ef; font-size: .95rem; }
+.home-maker small { display: block; margin-top: .4rem; color: #8d9aad; font-size: .75rem; }
+.home-maker .home-link { margin-top: 0; }
+.home-download { padding: 7rem 0 5rem; background: #f0f2f5; color: #131b28; text-align: center; }
+.home-download .home-heading { max-width: 750px; margin-inline: auto; }
+.home-download-intro { color: #596578; line-height: 1.8; max-width: 500px; margin: 0 auto; }
+.home-devices { max-width: 920px; margin: 4rem auto 3rem; padding-bottom: 2rem; }
+.home-devices .platform-device-composition { min-height: 0; position: relative; }
+.home-devices .platform-desktop-display { width: 86%; margin: 0; }
+.home-devices .platform-phone-showcase { width: 22%; right: 0; bottom: -5%; }
+.home-devices .orbit-phone { width: 100%; height: auto; aspect-ratio: 265 / 545; }
+.home-download-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.home-release-note { color: #66768c; font-size: .75rem; line-height: 1.7; margin-top: 1.5rem; }
+@media(max-width:850px) {
+ .home-page .ep-wrap { width: calc(100% - 3rem); }
+ .home-benefit-layout,.home-trust-intro { grid-template-columns: 1fr; gap: 2.5rem; }
+ .home-benefits,.home-download { padding: 4rem 0; }
+ .home-trust { padding-top: 4rem; }
+ .home-trust-intro p { padding-bottom: 0; }
+ .home-trust-grid { gap: 2rem; }
+ .home-devices .platform-phone-showcase { position: absolute; width: 25%; right: 0; bottom: -5%; margin: 0; }
+ .home-maker { align-items: flex-start; }
+}
+@media(max-width:560px) {
+ .home-trust-grid { grid-template-columns: 1fr; gap: 0; }
+ .home-trust-item { padding-bottom: 2.5rem; }
+ .home-maker { flex-direction: column; }
+ .home-download-actions { flex-direction: column; }
+ .home-devices { margin-top: 2.5rem; margin-bottom: 2rem; padding-bottom: 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .home-content *, .home-content *::before, .home-content *::after { animation: none !important; transition: none !important; }
+}
+
+@media(min-width:1100px) {
+ .home-page .ep-wrap { width: min(1240px,calc(100% - 6rem)); }
+ .home-benefits { min-height: 90svh; display: grid; align-items: center; padding-block: clamp(7rem,12vh,10rem); }
+ .home-trust { padding-top: clamp(7rem,12vh,10rem); }
+ .home-heading { font-size: clamp(3.5rem,5.8vw,5.8rem); }
+ .home-intro p,.home-trust-intro p,.home-trust-item p { font-size: 1.1rem; }
+ .home-benefit { padding-block: 2rem; }
+ .home-benefit h3 { font-size: 1.75rem; }
+ .home-benefit p { font-size: 1rem; }
+ .home-trust-grid { margin-top: 4rem; }
+ .home-maker { padding-bottom: 4rem; }
+ .home-download { padding-block: clamp(7rem,12vh,10rem); }
+ .home-devices { max-width: 1080px; }
+}
+
+.home-maker-photo { object-fit: cover; flex-shrink: 0; }
+/* Center the full hardware group and give the display a laptop base. */
+.home-devices .platform-device-composition { max-width: none; margin-inline: auto; padding: 0 4% 2%; }
+.home-devices .platform-desktop-display { width: 90%; margin-inline: auto; border-radius: 12px 12px 5px 5px; box-shadow: 0 24px 50px -24px #19233880; }
+.home-devices .platform-desktop-display::after { content: ''; position: absolute; top: 100%; left: -7%; width: 114%; height: clamp(9px,1.6vw,20px); background: linear-gradient(#d0d4db,#979fa9 45%,#555e6b); border-radius: 2px 2px 45% 45% / 2px 2px 90% 90%; box-shadow: 0 8px 12px -5px #15203255; }
+.home-devices .platform-desktop-display::before { content: ''; position: absolute; z-index: 1; top: 100%; left: 42%; width: 16%; height: 4px; background: #707985; border-radius: 0 0 5px 5px; }
+.home-devices .platform-phone-showcase { right: 1%; width: 21%; bottom: 0; }
+.home-devices .platform-phone-showcase .orbit-phone { filter: drop-shadow(0 15px 18px #15203255); }
+
+.home-trust-intro { align-items: center; }
+.home-principle-quote { margin: 0; display: grid; place-items: center; text-align: center; padding: 2rem; }
+.home-principle-quote p { padding: 0; margin: 0; font-size: clamp(1.15rem,1.5vw,1.5rem); line-height: 1.7; color: #c1cee0; }
+
+/* Flat laptop chassis and a screenshot-proportioned Android enclosure. */
+.home-devices .platform-desktop-display::after { height: clamp(8px,1.1vw,13px); border-radius: 2px 2px 8px 8px; background: linear-gradient(#d5d9df 0 30%,#a7afb9 32% 78%,#77818d); }
+.home-devices .desktop-hardware-bar { padding-bottom: 8px; }
+.home-devices .desktop-hardware-camera { width: 12%; height: 9px; border-radius: 0 0 5px 5px; background: #080a0d; }
+.home-devices .orbit-phone { aspect-ratio: 1100 / 2420; }
+.home-devices .orbit-phone-frame { border: 0; border-radius: 9% / 4%; padding: 1%; position: relative; width: 100%; height: 100%; box-shadow: 0 0 0 1px #68717c,0 8px 20px #15203244; }
+.home-devices .orbit-phone-screen { position: relative; inset: auto; width: 100%; height: 100%; aspect-ratio: auto; border-radius: 8% / 3.5%; box-shadow: none; }
+.home-devices .orbit-phone-screen img { object-fit: contain; transform: none; }
+.home-devices .orbit-phone-camera { top: 1.4%; width: 3%; height: auto; aspect-ratio: 1; }

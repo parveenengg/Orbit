@@ -3,285 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orbit — A Browser Built Around You</title>
+  <title>Orbit: A Browser Built Around You</title>
   <meta name="description" content="Orbit is a clean, customizable browser designed to give users control over their browsing experience without unnecessary clutter.">
   <meta name="author" content="Parveen Kumar">
 
   <link rel="icon" type="image/png" href="assets/icons/orbit-circle.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  
+
   <!-- GSAP & Three.js for V2.5 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="home-page.css?v=6">
+  <link rel="stylesheet" href="orbit-ui.css?v=16">
 </head>
-<body class="theme-dark">
+<body class="theme-dark home-page">
+
+  <!-- 3D WebGL Background Container -->
+  <div id="webgl-container" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
 
   <!-- Navigation -->
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-brand" aria-label="Orbit Home">
+      <a href="/" class="nav-brand" aria-label="Orbit Home">
         <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
         <span class="brand-name">Orbit</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="features.html" class="nav-link">Features</a></li>
-        <li><a href="privacy.html" class="nav-link">Privacy</a></li>
-        <li><a href="opensource.html" class="nav-link">Open Source</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="/features" class="nav-link">Features</a></li>
+        <li><a href="/privacy" class="nav-link">Privacy</a></li>
+        <li><a href="/opensource" class="nav-link">Open Source</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="download.html" class="btn btn-primary">Download</a>
+        <a href="/download" class="btn btn-primary">Download</a>
       </div>
     </div>
   </nav>
 
   <!-- CHAPTER 1: DARK - Orbit 3D Hero -->
-  <header class="hero theme-dark" id="heroSection">
+  <header class="hero" id="heroSection" style="background: transparent;">
     <div class="container hero-content">
-      <div class="hero-brand-mark mb-3">
-        <!-- 3D Canvas will eventually inject here -->
-        <img src="assets/icons/orbit-circle.png" alt="Orbit Mark" width="80" style="opacity: 0.5;">
-      </div>
-      <h1 class="hero-title">Browse on your terms.</h1>
-      <p class="hero-sub">
+      <h1 class="hero-title zero-gravity-word" aria-label="ORBIT">
+        <span class="gravity-letter" data-letter="O">O</span>
+        <span class="gravity-letter" data-letter="R">R</span>
+        <span class="gravity-letter" data-letter="B">B</span>
+        <span class="gravity-letter" data-letter="I">I</span>
+        <span class="gravity-letter" data-letter="T">T</span>
+      </h1>
+      <h2 class="hero-sub">Browse on your terms.</h2>
+      <p class="hero-sub-small">
         An open-source browser built around you.
       </p>
-      <div class="hero-actions justify-center mt-3 mb-5">
-        <a href="download.html" class="btn btn-primary btn-lg">Download Orbit</a>
-        <a href="features.html" class="btn btn-secondary btn-lg">Explore</a>
-      </div>
     </div>
-    
-    <!-- Hero Product Visual (Desktop Mockup) -->
-    <div class="hero-visual-wrapper" id="heroVisual">
-      <!-- We will isolate this for V2.5 transitions later -->
-      <img src="assets/orbit-mac-interface.png" alt="Orbit macOS Interface" class="hero-product-img desktop-visual">
+
+    <!-- Desktop Browser Window Representation -->
+    <div class="simulator-wrapper" id="heroVisual">
+      <div class="simulator-inner">
+        <!-- Realistic Desktop Browser Chrome -->
+        <div class="sim-header">
+          <div class="sim-dots">
+            <span class="sim-dot r" title="Close"></span>
+            <span class="sim-dot y" title="Minimize"></span>
+            <span class="sim-dot g" title="Maximize"></span>
+          </div>
+
+          <!-- Browser Navigation Buttons -->
+          <div class="sim-nav-btns">
+            <button class="sim-nav-btn" title="Back" disabled>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="sim-nav-btn" title="Forward" disabled>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <button class="sim-nav-btn" title="Reload">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+            </button>
+          </div>
+
+          <!-- Active Desktop Tab -->
+          <div class="sim-tabs">
+            <div class="sim-desktop-tab active">
+              <img src="assets/icons/orbit-circle.png" alt="Orbit" style="width: 14px; height: 14px; border-radius: 3px;">
+              <span>New Tab</span>
+              <span class="tab-x">&times;</span>
+            </div>
+            <button class="sim-newtab-btn" title="New Tab">+</button>
+          </div>
+
+          <!-- Central Desktop Omnibar -->
+          <div class="sim-url-pill">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span id="simAddressBar">orbit://newtab</span>
+            </div>
+            <span class="sim-shortcut-badge">⌘L</span>
+          </div>
+
+          <!-- Right Controls -->
+          <div class="sim-right-controls">
+            <button class="sim-nav-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"></path></svg></button>
+            <button class="sim-nav-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></button>
+          </div>
+        </div>
+        <!-- Simulator Body (Clean New Tab) -->
+        <div class="sim-body">
+          <div class="sim-content">
+            <img src="assets/orbit-mac-interface.png" alt="Orbit Mac Interface" style="width: 100%; height: auto; display: block; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- CHAPTER 2: LIGHT - What is Orbit? -->
-  <section class="meet-orbit theme-light pt-15 pb-10">
-    <div class="container">
-      <div class="section-header text-center pb-6">
-        <h2 class="section-title">Your browser.<br>Without the clutter.</h2>
-        <p class="section-sub mt-2">
-          Designed for pure focus, native speed, and zero developer-side tracking.
-        </p>
+  <main class="home-content">
+    <section class="home-benefits theme-light" id="everything">
+      <div class="ep-wrap home-benefit-layout">
+        <div class="home-intro" data-home-reveal><span class="home-kicker">01 / THE EVERYDAY ESSENTIALS</span><h2 class="home-heading">Everything<br>you need.</h2><p>A calmer place to browse. Familiar controls, thoughtful details, and room to make the experience your own.</p><a class="btn btn-primary" href="/features">Explore the features <span aria-hidden="true">↗</span></a></div>
+        <div class="home-benefit-list">
+          <article class="home-benefit" data-home-reveal><span>01</span><div><h3>Start with a clear view.</h3><p>A clean home, your shortcuts, and a search engine you choose. Less competing for your attention.</p></div></article>
+          <article class="home-benefit" data-home-reveal><span>02</span><div><h3>Keep your place.</h3><p>Visual tabs bring your open pages together, so it’s easier to find the one you want next.</p></div></article>
+          <article class="home-benefit" data-home-reveal><span>03</span><div><h3>Make it feel like yours.</h3><p>Light, dark, or system appearance. Your accent colors. A browser that fits into your day.</p></div></article>
+          <article class="home-benefit" data-home-reveal><span>04</span><div><h3>Stay in control.</h3><p>History, browsing preferences, and data controls within reach. Review the details in the feature tour.</p></div></article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="home-trust">
+      <div class="ep-wrap">
+        <div class="home-trust-intro"><div data-home-reveal><span class="home-kicker">02 / THE PRINCIPLES BEHIND IT</span><h2 class="home-heading">Your browser.<br>On your terms.</h2></div><blockquote class="home-principle-quote" data-home-reveal><p>“A thoughtful interface is only part of the story. How the browser is built and what it asks of you matter too.”</p></blockquote></div>
+        <div class="home-trust-grid">
+          <article class="home-trust-item" data-home-reveal><div class="home-trust-symbol" aria-hidden="true">&lt;/&gt;</div><h3>Built in the open.</h3><p>Orbit is an independent, open-source project. Follow its progress, share feedback, and help improve what comes next.</p><a class="home-link" href="/opensource">Explore the project <span aria-hidden="true">↗</span></a></article>
+          <article class="home-trust-item" data-home-reveal><div class="home-trust-symbol" aria-hidden="true">◎</div><h3>A clearer privacy boundary.</h3><p>Orbit’s commitment is not to sell your browsing data. Websites and search engines have their own practices. Here’s where that boundary sits.</p><a class="home-link" href="/privacy">Understand privacy <span aria-hidden="true">↗</span></a></article>
+        </div>
+        <div class="home-maker" data-home-reveal><div class="home-maker-identity"><img class="home-maker-monogram home-maker-photo" src="assets/images/parveen-kumar.png" alt="Parveen Kumar" width="800" height="800" loading="lazy" decoding="async"><div><p>Built by Parveen Kumar.</p><small>Independent project. A personal point of view.</small></div></div><a class="home-link" href="/about">The story behind Orbit <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+    <section class="home-download theme-light">
+      <div class="ep-wrap">
+        <div data-home-reveal><span class="home-kicker">03 / FIND YOUR ORBIT</span><h2 class="home-heading">From your desk.<br>To your pocket.</h2><p class="home-download-intro">Explore Orbit on Android and macOS.<br>Start with the Android app, or see the download options.</p></div>
+        <div class="home-devices" data-home-reveal>
+        <div class="platform-device-composition">
 
-  <!-- CHAPTER 3: DARK - Scroll-Driven Product Story -->
-  <section class="feature-story theme-dark pt-15 pb-15" id="featureStory">
-    
-    <!-- DESKTOP ORBITAL WHEEL (Hidden on mobile) -->
-    <div class="desktop-orbital-layout">
-      <div class="orbital-left">
-        <div class="wheel-container" id="wheelContainer">
-          
-          <div class="wheel-node" style="transform: rotate(180deg);">
-            <div class="node-anchor" style="transform: translate(700px) rotate(-180deg);">
-              <div class="node-dot active"></div>
-              <div class="node-content active" data-index="0">
-                <span class="story-num">01 — Browse</span>
-                <h3 class="story-title">A clean home designed around where you want to go.</h3>
-              </div>
+          <!-- Desktop Screen Hardware Enclosure -->
+          <div class="platform-desktop-display">
+            <div class="desktop-hardware-bar">
+              <div class="desktop-hardware-camera"></div>
+            </div>
+            <div class="desktop-screen-viewport">
+              <img loading="lazy" decoding="async" src="assets/orbit-mac-interface.png" alt="Orbit for macOS" class="desktop-screen-img">
             </div>
           </div>
-          
-          <div class="wheel-node" style="transform: rotate(155deg);">
-            <div class="node-anchor" style="transform: translate(700px) rotate(-155deg);">
-              <div class="node-dot"></div>
-              <div class="node-content" data-index="1">
-                <span class="story-num">02 — Tabs</span>
-                <h3 class="story-title">Keep your browsing organized without turning tab management into work.</h3>
+
+          <!-- Smartphone Hardware Mockup (Orbit Phone) -->
+          <div class="platform-phone-showcase">
+            <div class="orbit-phone">
+              <div class="orbit-phone-frame">
+                <div class="orbit-phone-camera"></div>
+                <div class="orbit-phone-screen">
+                  <img loading="lazy" decoding="async" src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit for Android" class="screen-img active">
+                </div>
               </div>
+              <div class="orbit-phone-glow"></div>
             </div>
           </div>
-          
-          <div class="wheel-node" style="transform: rotate(130deg);">
-            <div class="node-anchor" style="transform: translate(700px) rotate(-130deg);">
-              <div class="node-dot"></div>
-              <div class="node-content" data-index="2">
-                <span class="story-num">03 — Make it Yours</span>
-                <h3 class="story-title">Light. Dark. System. Choose your accent and make the home screen yours.</h3>
-              </div>
-            </div>
-          </div>
-          
-          <div class="wheel-node" style="transform: rotate(105deg);">
-            <div class="node-anchor" style="transform: translate(700px) rotate(-105deg);">
-              <div class="node-dot"></div>
-              <div class="node-content" data-index="3">
-                <span class="story-num">04 — Control</span>
-                <h3 class="story-title">History, permissions, startup behavior, and search engine are accessible from a clear settings interface.</h3>
-              </div>
-            </div>
-          </div>
-      
-      <div class="orbital-right">
-        <div class="orbit-phone-wrapper" id="desktopStoryPhone">
-          <div class="orbit-phone-buttons"></div>
-          <div class="orbit-phone-screen">
-            <div class="orbit-phone-camera"></div>
-            <!-- Base Image always visible as fallback -->
-            <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Mobile Home" class="story-img active" id="desk-img-0">
-            <img src="assets/images/Orbit-Android-Tabs.jpeg" alt="Orbit Mobile Tabs" class="story-img story-img-overlay" id="desk-img-1">
-            <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Mobile Appearance" class="story-img story-img-overlay" id="desk-img-2">
-            <img src="assets/images/Orbit-Android-Settings.jpeg" alt="Orbit Mobile Settings" class="story-img story-img-overlay" id="desk-img-3">
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- MOBILE LINEAR LAYOUT (Hidden on desktop) -->
-    <div class="mobile-orbital-layout container">
-      <div class="story-visual-sticky mb-5" style="position: sticky; top: 10vh; z-index: 10;">
-        <div class="orbit-phone-wrapper" style="margin: 0 auto; max-width: 260px;">
-          <div class="orbit-phone-buttons"></div>
-          <div class="orbit-phone-screen">
-            <div class="orbit-phone-camera"></div>
-            <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Mobile Home" class="story-img active" id="mob-img-0">
-            <img src="assets/images/Orbit-Android-Tabs.jpeg" alt="Orbit Mobile Tabs" class="story-img story-img-overlay" id="mob-img-1">
-            <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Mobile Appearance" class="story-img story-img-overlay" id="mob-img-2">
-            <img src="assets/images/Orbit-Android-Settings.jpeg" alt="Orbit Mobile Settings" class="story-img story-img-overlay" id="mob-img-3">
-          </div>
         </div>
-      </div>
-      <div class="story-content-mobile pb-15">
-        <div class="story-item-mob pt-15 pb-15" data-index="0">
-          <span class="story-num">01 — Browse</span>
-          <h3 class="story-title">A clean home designed around where you want to go.</h3>
-        </div>
-        <div class="story-item-mob pt-15 pb-15" data-index="1">
-          <span class="story-num">02 — Tabs</span>
-          <h3 class="story-title">Keep your browsing organized without turning tab management into work.</h3>
-        </div>
-        <div class="story-item-mob pt-15 pb-15" data-index="2">
-          <span class="story-num">03 — Make it Yours</span>
-          <h3 class="story-title">Light. Dark. System. Choose your accent and make the home screen yours.</h3>
-        </div>
-        <div class="story-item-mob pt-15 pb-15" data-index="3">
-          <span class="story-num">04 — Control</span>
-          <h3 class="story-title">History, permissions, startup behavior, and search engine are accessible from a clear settings interface.</h3>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CHAPTER 4: LIGHT - Selected Features -->
-  <section class="feature-grid-section theme-light pt-15 pb-10">
-    <div class="container">
-      <div class="section-header text-center mb-5">
-        <h2 class="section-title">Everything you need.</h2>
-      </div>
-      <div class="bento-grid">
-        <div class="bento-card card-browsing">
-          <div class="bento-content">
-            <h4>Browsing & Speed</h4>
-            <p>Sub-millisecond responsiveness and distraction-free clarity. Designed to stay out of your way.</p>
-          </div>
-          <div class="bento-visual">
-            <img src="assets/orbit-mac-interface.png" alt="Orbit Speed" class="bento-img" style="border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); margin-top: 1.5rem; width: 100%;">
-          </div>
         </div>
-        <div class="bento-card">
-          <h4>Privacy</h4>
-          <p>Zero developer-side tracking. What you browse stays strictly between you and your device.</p>
-        </div>
-        <div class="bento-card">
-          <h4>Bookmarks</h4>
-          <p>Save essential sites and organize them cleanly without the usual clutter.</p>
-        </div>
-        <div class="bento-card">
-          <h4>Customization</h4>
-          <p>Search engine freedom and personalized themes. Choose your accent and make the home screen yours.</p>
-        </div>
+        <div data-home-reveal><div class="home-download-actions"><a class="btn btn-primary" href="downloads/Orbit.apk" download="Orbit.apk">Download Android <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="/download">Download options <span aria-hidden="true">→</span></a></div><p class="home-release-note">Independent &amp; open source · Explore platform details before installing.</p></div>
       </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 5: DARK - Make Orbit Yours -->
-  <section class="customization-section theme-dark pt-15 pb-10">
-    <div class="container text-center">
-      <h2 class="section-title">Make Orbit yours.</h2>
-      <p class="section-sub mt-2">
-        Light when you want it.<br>
-        Dark when you don't.<br>
-        Your colors either way.
-      </p>
-      <div class="customization-visual orbit-phone-wrapper" style="margin: 3rem auto 0;">
-        <div class="orbit-phone-buttons"></div>
-        <div class="orbit-phone-screen">
-          <div class="orbit-phone-camera"></div>
-          <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Appearance Customization" class="customization-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 6: LIGHT - Open Source -->
-  <section class="open-source-section theme-light pt-15 pb-10">
-    <div class="container text-center">
-      <h2 class="section-title">Built in the open.</h2>
-      <p class="section-sub mt-2">
-        Orbit is an open-source browser.<br>
-        Inspect it. Learn from it. Improve it.
-      </p>
-      <div class="hero-actions justify-center mt-3">
-        <a href="https://github.com/parveenengg/Orbit" class="btn btn-primary">View Repository</a>
-        <a href="opensource.html" class="btn btn-secondary">Contribute to Orbit</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 7: DARK - Privacy / Control -->
-  <section class="privacy-teaser theme-dark pt-15 pb-10">
-    <div class="container text-center">
-      <h2 class="section-title">Your browser.<br>Your data.</h2>
-      <p class="section-sub mt-2">
-        Orbit is engineered with privacy at its core. What you browse stays strictly on your machine.
-      </p>
-      <a href="privacy.html" class="btn btn-secondary mt-3">See how data stays on your device</a>
-    </div>
-  </section>
-
-  <!-- CHAPTER 8: LIGHT - About Orbit -->
-  <section class="about-teaser theme-light pt-15 pb-10">
-    <div class="container text-center">
-      <h2 class="section-title">Built by Parveen Kumar.</h2>
-      <p class="section-sub mt-2">
-        Engineered with the <em>Obvious Choice</em> philosophy. Simple, private, and out of your way.
-      </p>
-      <div class="hero-actions justify-center mt-3">
-        <a href="about.html" class="btn btn-secondary">Read the project story</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAPTER 9: DARK - Download / Cross-Platform -->
-  <section class="cross-platform theme-dark pb-10 pt-15">
-    <div class="container text-center">
-      <h2 class="section-title">Orbit, wherever you browse.</h2>
-      <div class="platform-visual">
-        <img src="assets/orbit-mac-interface.png" alt="Orbit Desktop" class="platform-desktop">
-        <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Android" class="platform-mobile">
-      </div>
-      <div class="hero-actions justify-center mt-5 pt-15">
-        <a href="download.html" class="btn btn-primary btn-lg">Download Orbit</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer theme-dark">
     <div class="footer-bg-ring"></div>
     <div class="container relative">
       <div class="footer-grid">
-        
+
         <div class="footer-brand">
           <div class="footer-logo">
             <img src="assets/icons/orbit-circle.png" alt="Orbit Logo">
@@ -293,8 +198,8 @@
         <div class="footer-col">
           <h4>Product</h4>
           <ul>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="download.html">Download</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/download">Download</a></li>
           </ul>
         </div>
 
@@ -302,38 +207,41 @@
           <h4>Open Source</h4>
           <ul>
             <li><a href="https://github.com/parveenengg/Orbit">Repository</a></li>
-            <li><a href="opensource.html">Contribute</a></li>
+            <li><a href="/opensource">Contribute</a></li>
             <li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li>
-            <li><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">License</a></li>
+            <li><a href="/documentation#license">License</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Trust</h4>
           <ul>
-            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="/documentation#privacy-policy">Privacy policy</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Project</h4>
           <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html#creator">Creator</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about#creator">Creator</a></li>
           </ul>
         </div>
       </div>
-      
+
       <div class="footer-bottom flex-between">
         <p>&copy; 2026 Orbit Browser.</p>
         <div class="footer-legal-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">Licenses</a>
+          <a href="/documentation#privacy-policy">Privacy policy</a>
+          <a href="/documentation#license">License</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="three-scene.js?v=9"></script>
+  <script src="app.js?v=arrival-zoom-1"></script>
+  <script src="orbit-ui.js?v=5"></script>
+  <script src="home-page.js?v=1"></script>
 </body>
 </html>

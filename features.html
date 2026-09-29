@@ -3,160 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Features — Explore Orbit Browser</title>
-  <link rel="icon" type="image/png" href="assets/icons/orbit-circle.png">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .features-hero { padding-top: 10rem; padding-bottom: 6rem; text-align: center; }
-    .feature-block { display: flex; align-items: center; gap: 4rem; margin-bottom: 10rem; }
-    .feature-block:nth-child(even) { flex-direction: row-reverse; }
-    .feature-text { flex: 1; }
-    .feature-visual { flex: 1; display: flex; justify-content: center; }
-    .feature-text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .feature-text p { color: var(--orbit-text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
-    
-    @media (max-width: 768px) {
-      .feature-block, .feature-block:nth-child(even) { flex-direction: column; text-align: center; gap: 2rem; margin-bottom: 6rem; }
-    }
-  </style>
-</head>
-<body class="theme-dark">
+  <title>Features · Orbit Browser</title>
+  <meta name="description" content="Explore Orbit's actual features: distraction-free home, visual card tabs, granular privacy controls, and deep personalization.">
+  <meta name="author" content="Parveen Kumar">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/orbit-circle.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="features-tour.css?v=4">
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="orbit-ui.css?v=16">
+</head>
+<body class="theme-dark features-page">
+
+  <!-- Main Navigation -->
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-brand">
+      <a href="/" class="nav-brand" aria-label="Orbit Home">
         <img src="assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
         <span class="brand-name">Orbit</span>
       </a>
+
       <ul class="nav-links">
-        <li><a href="features.html" class="nav-link">Features</a></li>
-        <li><a href="privacy.html" class="nav-link">Privacy</a></li>
-        <li><a href="opensource.html" class="nav-link">Open Source</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="/features" class="nav-link active">Features</a></li>
+        <li><a href="/privacy" class="nav-link">Privacy</a></li>
+        <li><a href="/opensource" class="nav-link">Open Source</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
       </ul>
-      <div class="nav-actions"><a href="download.html" class="btn btn-primary">Download</a></div>
+
+      <div class="nav-actions">
+        <a href="/download" class="btn btn-primary">Download</a>
+      </div>
     </div>
   </nav>
 
-  <header class="features-hero">
-    <div class="container">
-      <h1 class="hero-title">Explore Orbit</h1>
-      <p class="section-sub">A closer look at how Orbit works.</p>
+  <!-- Hero Section -->
+  <header class="features-hero theme-dark">
+    <div class="container relative z-10">
+      <span class="features-hero-eyebrow">THE ORBIT EXPERIENCE</span>
+      <h1 class="features-hero-title">
+        Your browser.<br>Across your orbit.
+      </h1>
+      <p class="features-hero-sub">
+        A closer look at Orbit on Android and macOS.<br>Start with the mobile experience, one detail at a time.
+      </p>
+
+      <!-- Real Desktop + Android Product Showcase -->
+      <div class="features-hero-devices">
+        <div class="platform-ambient-glow" aria-hidden="true"></div>
+        <div class="platform-device-composition">
+          <!-- Desktop Display Mockup -->
+          <div class="platform-desktop-display">
+            <div class="desktop-hardware-bar">
+              <div class="desktop-hardware-camera"></div>
+            </div>
+            <div class="desktop-screen-viewport">
+              <img src="assets/orbit-mac-interface.png" alt="Orbit for macOS" class="desktop-screen-img">
+            </div>
+          </div>
+
+          <!-- Smartphone Hardware Mockup -->
+          <div class="platform-phone-showcase">
+            <div class="orbit-phone">
+              <div class="orbit-phone-frame">
+                <div class="orbit-phone-camera"></div>
+                <div class="orbit-phone-screen">
+                  <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Android Home" class="screen-img active">
+                </div>
+              </div>
+              <div class="orbit-phone-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    
-    <!-- Browsing -->
-    <div class="feature-block">
-      <div class="feature-text">
-        <h2>Clean Browsing</h2>
-        <p>Your home screen should reflect where you want to go, not what advertisers want you to click. Orbit offers a completely clutter-free interface focusing entirely on your search and bookmarks.</p>
+  <main>
+    <section class="platform-picker container" aria-labelledby="platform-heading">
+      <div><span class="tour-eyebrow">CHOOSE YOUR VIEW</span><h2 id="platform-heading">One Orbit. Different perspectives.</h2></div>
+      <div class="platform-options" role="tablist" aria-label="Platform tours">
+        <button type="button" class="platform-option is-current" role="tab" id="view-mobile" aria-controls="mobile-tour" aria-selected="true" data-platform="mobile"><span>Mobile</span><small>Android · Explore now</small></button>
+        <button type="button" class="platform-option" role="tab" id="view-desktop" aria-controls="desktop-tour" aria-selected="false" tabindex="-1" data-platform="desktop"><span>Desktop</span><small>macOS · Preview in progress</small></button>
+        <button type="button" class="platform-option" role="tab" id="view-tablet" aria-controls="tablet-tour" aria-selected="false" tabindex="-1" data-platform="tablet"><span>Tablet</span><small>Tour concept · In progress</small></button>
       </div>
-      <div class="feature-visual">
-        <div class="orbit-phone-wrapper">
-          <div class="orbit-phone-buttons"></div>
-          <div class="orbit-phone-screen">
-            <div class="orbit-phone-camera"></div>
-            <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Home Screen">
-          </div>
+      <p class="platform-note">The Android tour is ready to explore. Desktop and tablet walkthroughs are not available yet; tablet support is not announced.</p>
+    </section>
+    <section class="mobile-tour" id="mobile-tour" role="tabpanel" aria-labelledby="view-mobile" tabindex="0">
+      <div class="tour-stage">
+        <div class="tour-progress" aria-label="Tour chapters">
+          <a href="#tour-browse" class="tour-progress-link"><span>01</span> Browse</a>
+          <a href="#tour-tabs" class="tour-progress-link"><span>02</span> Tabs</a>
+          <a href="#tour-appearance" class="tour-progress-link"><span>03</span> Appearance</a>
+          <a href="#tour-control" class="tour-progress-link"><span>04</span> Control</a>
+        </div>
+        <div class="tour-steps">
+      <article class="tour-step" id="tour-browse" aria-labelledby="tour-title-0">
+        <div class="tour-copy">
+          <span class="tour-eyebrow">01 / Browse</span>
+          <h2 id="tour-title-0">A little less noise.<br>A lot more focus.</h2>
+          <p>Start with a clean home, your shortcuts, and the search engine you choose. A familiar place to begin, without a feed competing for your attention.</p>
+          <div class="tour-detail">Search engine choice · Personal shortcuts</div>
+        </div>
+        <div class="tour-device">
+          <div class="tour-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="orbit-phone"><div class="orbit-phone-frame">
+            <div class="orbit-phone-camera"></div><div class="orbit-phone-screen">
+              <img src="assets/images/Orbit-Android-HomeScreen.jpeg" alt="Orbit Android home screen" class="screen-img active" width="540" height="1200" decoding="async">
+            </div>
+          </div></div>
+        </div>
+      </article>
+      <article class="tour-step" id="tour-tabs" aria-labelledby="tour-title-1">
+        <div class="tour-copy">
+          <span class="tour-eyebrow">02 / Tabs</span>
+          <h2 id="tour-title-1">Keep your place.<br>Find your next one.</h2>
+          <p>See your open pages as visual cards. Move between them and manage your browsing from one clear overview.</p>
+          <div class="tour-detail">Visual tab overview · Tab management</div>
+        </div>
+        <div class="tour-device">
+          <div class="tour-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="orbit-phone"><div class="orbit-phone-frame">
+            <div class="orbit-phone-camera"></div><div class="orbit-phone-screen">
+              <img src="assets/images/Orbit-Android-Tabs.jpeg" alt="Orbit Android visual tab overview" class="screen-img active" width="540" height="1200" decoding="async">
+            </div>
+          </div></div>
+        </div>
+      </article>
+      <article class="tour-step" id="tour-appearance" aria-labelledby="tour-title-2">
+        <div class="tour-copy">
+          <span class="tour-eyebrow">03 / Appearance</span>
+          <h2 id="tour-title-2">Make yourself<br>at home.</h2>
+          <p>Choose light, dark, or system appearance. Pick an accent and make your everyday browsing space feel like yours.</p>
+          <div class="tour-detail">Light / dark / system · Accent colors</div>
+        </div>
+        <div class="tour-device">
+          <div class="tour-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="orbit-phone"><div class="orbit-phone-frame">
+            <div class="orbit-phone-camera"></div><div class="orbit-phone-screen">
+              <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Android appearance settings" class="screen-img active" width="540" height="1200" decoding="async">
+            </div>
+          </div></div>
+        </div>
+      </article>
+      <article class="tour-step" id="tour-control" aria-labelledby="tour-title-3">
+        <div class="tour-copy">
+          <span class="tour-eyebrow">04 / Control</span>
+          <h2 id="tour-title-3">Your preferences.<br>Within reach.</h2>
+          <p>Bring history, search preferences, and browsing settings together. Review your choices and clear browsing data when you need a fresh start.</p>
+          <div class="tour-detail">History · Browsing settings · Data controls</div>
+        </div>
+        <div class="tour-device">
+          <div class="tour-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="orbit-phone"><div class="orbit-phone-frame">
+            <div class="orbit-phone-camera"></div><div class="orbit-phone-screen">
+              <img src="assets/images/Orbit-Android-Settings.jpeg" alt="Orbit Android browsing settings" class="screen-img active" width="540" height="1200" decoding="async">
+            </div>
+          </div></div>
+        </div>
+      </article>
+        </div>
+        <p class="tour-scroll-hint" aria-hidden="true">SCROLL TO EXPLORE <span>↓</span></p>
+      </div>
+    </section>
+    <section class="platform-preview" id="desktop-tour" role="tabpanel" aria-labelledby="view-desktop" tabindex="0" hidden>
+      <div class="preview-laptop"><div class="preview-message"><span class="tour-eyebrow">DESKTOP TOUR</span><h2>We’re working on it.</h2><p>A wider view of Orbit for macOS is taking shape.<br>The desktop walkthrough is not ready yet.</p></div></div>
+    </section>
+    <section class="platform-preview" id="tablet-tour" role="tabpanel" aria-labelledby="view-tablet" tabindex="0" hidden>
+      <div class="preview-tablet"><div class="preview-message"><span class="tour-eyebrow">TABLET TOUR</span><h2>We’re working on it.</h2><p>Exploring how Orbit could feel on a larger touch screen.<br>Tablet support and a release date are not announced.</p></div></div>
+    </section>
+    <section class="tour-principles theme-light">
+      <div class="container">
+        <span class="tour-eyebrow">WHAT ORBIT STANDS FOR</span>
+        <h2 class="tour-section-title">Open by choice.<br>Personal by design.</h2>
+        <div class="tour-principle-grid">
+          <article><span class="tour-index">01 / IN THE OPEN</span><h3>Follow what comes next.</h3><p>Orbit is an independent, open-source browser. Follow the project, ask questions, and help shape what comes next.</p><a class="tour-text-link" href="https://github.com/parveenengg/Orbit">Follow on GitHub <span aria-hidden="true">↗</span></a></article>
+          <article><span class="tour-index">02 / YOUR DATA</span><h3>A clear privacy boundary.</h3><p>Orbit is built around a simple commitment: not selling your browsing data. Websites and search engines have their own data practices; using Orbit does not prevent them from collecting information.</p><a class="tour-text-link" href="/privacy">Read about privacy <span aria-hidden="true">↗</span></a></article>
         </div>
       </div>
-    </div>
-
-    <!-- Tabs -->
-    <div class="feature-block">
-      <div class="feature-text">
-        <h2>Effortless Tabs</h2>
-        <p>Keep your browsing organized without turning tab management into a chore. Orbit's tab interface is designed to be visually distinct, allowing you to instantly find the page you left off on.</p>
-      </div>
-      <div class="feature-visual">
-        <div class="orbit-phone-wrapper">
-          <div class="orbit-phone-buttons"></div>
-          <div class="orbit-phone-screen">
-            <div class="orbit-phone-camera"></div>
-            <img src="assets/images/Orbit-Android-Tabs.jpeg" alt="Orbit Tabs">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Personalization -->
-    <div class="feature-block">
-      <div class="feature-text">
-        <h2>Deep Personalization</h2>
-        <p>Light mode, Dark mode, or matched to your system. Select your own accent colors and adapt the browser's UI to feel like a native extension of your device.</p>
-      </div>
-      <div class="feature-visual">
-        <div class="orbit-phone-wrapper">
-          <div class="orbit-phone-buttons"></div>
-          <div class="orbit-phone-screen">
-            <div class="orbit-phone-camera"></div>
-            <img src="assets/images/Orbit-Android-Appearence.jpeg" alt="Orbit Appearance">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Control -->
-    <div class="feature-block">
-      <div class="feature-text">
-        <h2>Granular Control</h2>
-        <p>Search engine freedom, startup behavior, and strict site permissions. You decide exactly which sites have access to your hardware and location, all from a clear settings panel.</p>
-      </div>
-      <div class="feature-visual">
-        <div class="orbit-phone-wrapper">
-          <div class="orbit-phone-buttons"></div>
-          <div class="orbit-phone-screen">
-            <div class="orbit-phone-camera"></div>
-            <img src="assets/images/Orbit-Android-Settings.jpeg" alt="Orbit Settings">
-          </div>
-        </div>
-      </div>
-    </div>
-
+    </section>
+    <section class="tour-future container">
+      <div><span class="tour-eyebrow">ON THE HORIZON · NOT AVAILABLE TODAY</span><h2 class="tour-section-title">More room<br>to make it yours.</h2></div>
+      <div><p>The long term ambition is a browser you can extend with your own features and workflows. Inspired by the freedom of open systems, shaped by the people who use it.</p><p class="tour-muted">This is a direction for the future, not a feature in the current release. There is no announced release date.</p></div>
+    </section>
+    <section class="tour-download theme-light">
+      <div class="container"><span class="tour-eyebrow">YOUR NEXT STOP</span><h2 class="tour-section-title">Take Orbit for a spin.</h2><p>Start with Android, or explore the available download options.</p><div class="tour-actions"><a href="downloads/Orbit.apk" download="Orbit.apk" class="tour-button tour-button-primary">Download Android <span aria-hidden="true">↗</span></a><a href="/download" class="tour-button tour-button-secondary">Download options <span aria-hidden="true">→</span></a></div></div>
+    </section>
   </main>
-
-  <section class="download-cta theme-dark" style="padding: 6rem 0;">
-    <div class="container text-center">
-      <h2 class="section-title">Ready to browse differently?</h2>
-      <div class="hero-actions justify-center mt-3">
-        <a href="download.html" class="btn btn-primary btn-lg">Download Orbit</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="footer-bg-ring"></div>
     <div class="container relative">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo"><img src="assets/icons/orbit-circle.png" alt="Orbit Logo"><span>Orbit</span></div>
+          <div class="footer-logo">
+            <img src="assets/icons/orbit-circle.png" alt="Orbit Logo">
+            <span>Orbit</span>
+          </div>
           <p class="footer-desc">Browse on your terms.</p>
         </div>
+
         <div class="footer-col">
           <h4>Product</h4>
-          <ul><li><a href="features.html">Features</a></li><li><a href="download.html">Download</a></li></ul>
+          <ul>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/download">Download</a></li>
+          </ul>
         </div>
+
         <div class="footer-col">
           <h4>Open Source</h4>
-          <ul><li><a href="https://github.com/parveenengg/Orbit">Repository</a></li><li><a href="opensource.html">Contribute</a></li><li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li><li><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">License</a></li></ul>
+          <ul>
+            <li><a href="https://github.com/parveenengg/Orbit">Repository</a></li>
+            <li><a href="/opensource">Contribute</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li>
+            <li><a href="/documentation#license">License</a></li>
+          </ul>
         </div>
+
         <div class="footer-col">
           <h4>Trust</h4>
-          <ul><li><a href="privacy.html">Privacy</a></li></ul>
+          <ul>
+            <li><a href="/documentation#privacy-policy">Privacy policy</a></li>
+          </ul>
         </div>
+
         <div class="footer-col">
           <h4>Project</h4>
-          <ul><li><a href="about.html">About</a></li><li><a href="about.html#creator">Creator</a></li></ul>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about#creator">Creator</a></li>
+          </ul>
         </div>
       </div>
+
       <div class="footer-bottom flex-between">
         <p>&copy; 2026 Orbit Browser.</p>
-        <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="https://github.com/parveenengg/Orbit/blob/main/LICENSE">Licenses</a></div>
+        <div class="footer-legal-links">
+          <a href="/documentation#privacy-policy">Privacy policy</a>
+          <a href="/documentation#license">License</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script src="app.js?v=arrival-zoom-1"></script>
+  <script src="features-tour.js?v=3"></script>
+  <script src="orbit-ui.js?v=5"></script>
 </body>
 </html>

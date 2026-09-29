@@ -1,0 +1,122 @@
+/* Features owns its tour layout; shared site and device styles remain in styles.css. */
+.features-page { overflow-x: clip; }
+.features-page .features-hero { padding: 10rem 0 4rem; }
+.features-page .features-hero-title { font-size: clamp(3rem, 7vw, 6rem); line-height: 1.02; letter-spacing: -.065em; }
+.features-page .features-hero-sub { max-width: 580px; margin: 1.75rem auto 0; }
+.features-page .features-hero-devices { max-width: 940px; margin: 4rem auto 1rem; }
+.features-page .features-hero-devices .platform-phone-showcase { width: 190px; }
+.features-page .features-hero-devices .orbit-phone { width: 100%; height: auto; aspect-ratio: 265/545; }
+.tour-eyebrow { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .16em; color: #88aada; margin-bottom: 1.25rem; }
+.platform-picker { padding-top: 5rem; padding-bottom: 4rem; }
+.platform-picker h2 { font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 500; letter-spacing: -.04em; }
+.platform-options { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; margin-top: 2rem; }
+.platform-option { display: flex; flex-direction: column; gap: .65rem; padding: 1.5rem; border: 1px solid #292c35; border-radius: 16px; color: #dddfe6; text-decoration: none; background: #0e1016; }
+.platform-option span { font-size: 1.2rem; }
+.platform-option small { font-size: .75rem; color: #969ba8; line-height: 1.5; }
+.platform-option.is-current { border-color: #718fbb; background: linear-gradient(120deg,#1b293e,#10141d); }
+.platform-option.is-current:hover { border-color: #b7cdeb; }
+.platform-option.is-current small { color: #bed1ef; }
+.platform-note { font-size: .8rem; line-height: 1.7; color: #989dad; max-width: 670px; margin-top: 1.25rem; }
+.mobile-tour { background: #07090e; scroll-margin-top: 110px; }
+.tour-stage { max-width: 1240px; margin: auto; padding: 3rem; position: relative; }
+.tour-progress { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.tour-progress-link { text-decoration: none; color: #969dae; font-size: .8rem; padding: .6rem 0; border-bottom: 1px solid transparent; }
+.tour-progress-link span { font-size: .65rem; margin-right: .4rem; }
+.tour-progress-link[aria-current="step"] { color: #fff; border-color: #9ebeea; }
+.tour-step { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; min-height: 650px; padding: 3rem 0; scroll-margin-top: 120px; }
+.tour-copy { position: relative; z-index: 2; }
+.tour-copy h2 { font-size: clamp(2.2rem,4.2vw,4rem); line-height: 1.08; letter-spacing: -.055em; margin: 0 0 1.5rem; font-weight: 500; }
+.tour-copy p { font-size: 1.05rem; line-height: 1.8; color: #aeb4c3; max-width: 420px; }
+.tour-detail { margin-top: 2rem; border-top: 1px solid #292e3a; padding-top: 1rem; font-size: .75rem; color: #a7bada; }
+.tour-device { position: relative; display: grid; place-items: center; min-width: 0; }
+.tour-device .orbit-phone { width: 245px; height: auto; aspect-ratio: 265/545; }
+.tour-device .screen-img { transform: none; transition: none; object-fit: cover; }
+.tour-orbits { position: absolute; width: min(42vw,500px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle,#24436a44,transparent 65%); pointer-events: none; }
+.tour-orbits i { position: absolute; inset: 0; border: 1px solid #7d9ec522; border-radius: 50%; transform: rotate(-25deg) scaleY(.72); }
+.tour-orbits i:nth-child(2) { inset: 12%; transform: rotate(25deg) scaleY(.8); }
+.tour-orbits i:nth-child(3) { inset: -12%; transform: rotate(-55deg) scaleY(.7); }
+.tour-scroll-hint { display: none; color: #929cab; font-size: .6rem; letter-spacing: .18em; }
+.tour-scroll-hint span { margin-left: 1rem; }
+.mobile-tour.is-enhanced .tour-stage { height: 100svh; min-height: 650px; max-height: 1000px; display: flex; flex-direction: column; padding-top: 110px; padding-bottom: 25px; }
+.mobile-tour.is-enhanced .tour-steps { position: relative; flex: 1; min-height: 0; }
+.mobile-tour.is-enhanced .tour-step { position: absolute; inset: 0; min-height: 0; padding: 0; }
+.mobile-tour.is-enhanced .tour-device .orbit-phone { width: auto; height: min(53vh,510px); }
+.mobile-tour.is-enhanced .tour-progress { margin-bottom: 1rem; position: relative; z-index: 3; }
+.mobile-tour.is-enhanced .tour-scroll-hint { display: block; margin-top: 1rem; }
+.tour-principles { padding: 7rem 0; }
+.tour-principles .tour-eyebrow { color: #47678f; }
+.tour-section-title { font-size: clamp(2.4rem,5vw,4.5rem); line-height: 1.06; letter-spacing: -.055em; font-weight: 500; }
+.tour-principle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
+.tour-principle-grid article { border-top: 1px solid #cdd0d4; padding-top: 1.5rem; }
+.tour-index { color: #657080; font-size: .65rem; letter-spacing: .14em; }
+.tour-principle-grid h3 { margin: 1.5rem 0 1rem; font-size: 1.6rem; font-weight: 500; letter-spacing: -.035em; }
+.tour-principle-grid p { line-height: 1.8; color: #525b66; }
+.tour-text-link { color: #172d48; display: inline-flex; gap: 2rem; margin-top: 1.75rem; text-decoration: none; padding-bottom: .4rem; border-bottom: 1px solid #9ba7b5; }
+.tour-text-link span,.tour-button span { transition: transform .25s ease; }
+.tour-text-link:hover span,.tour-button:hover span { transform: translate(3px,-2px); }
+.tour-future { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding-top: 7rem; padding-bottom: 7rem; align-items: center; }
+.tour-future p { color: #bdc2ce; line-height: 1.8; }
+.tour-future .tour-muted { color: #858d9e; font-size: .85rem; margin-top: 1.5rem; }
+.tour-download { padding: 6rem 0 7rem; text-align: center; border-top: 1px solid #232832; background: radial-gradient(ellipse at 50% 100%,#20324e55,transparent 70%); }
+.tour-download p { color: #aeb4c3; margin-top: 1.5rem; }
+.tour-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.tour-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1rem 1.5rem; min-height: 52px; border: 1px solid #4e5663; border-radius: 999px; text-decoration: none; font-size: .9rem; font-weight: 500; transition: background .25s,color .25s,transform .15s; }
+.tour-button-primary { background: #f5f6f8; color: #11151d; border-color: #f5f6f8; }
+.tour-button-secondary { background: #111620; color: #f5f6f8; }
+.tour-button-primary:hover { background: #d9e6f8; }
+.tour-button-secondary:hover { background: #26364d; }
+.tour-button:active { transform: scale(.98); }
+.features-page a:focus-visible { outline: 2px solid #89b9ff; outline-offset: 5px; }
+@media(max-width:899px) {
+ .mobile-tour { overflow: clip; }
+ .features-page .features-hero { padding-top: 9rem; }
+ .features-page .features-hero-devices .platform-device-composition { min-height: 0; padding-bottom: 0; }
+ .features-page .features-hero-devices .platform-desktop-display { width: 86%; margin-left: 0; }
+ .features-page .features-hero-devices .platform-phone-showcase { position: absolute; width: 24%; right: 0; bottom: -5%; margin: 0; }
+ .platform-picker { padding-top: 3rem; }
+ .tour-stage { padding: 2rem 1.5rem; }
+ .tour-step { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 0 4rem; border-top: 1px solid #252b36; }
+ .tour-copy { max-width: 550px; }
+ .tour-copy h2 { font-size: clamp(2.3rem,7vw,3.5rem); }
+ .tour-device .orbit-phone { width: min(245px,65vw); }
+ .tour-orbits { width: min(75vw,420px); }
+ .tour-principle-grid,.tour-future { grid-template-columns: 1fr; gap: 3rem; }
+ .tour-principles,.tour-download { padding: 4rem 0; }
+ .tour-future { padding-top: 4rem; padding-bottom: 4rem; }
+}
+@media(max-width:540px) {
+ .features-page .container { padding-left: 1.5rem; padding-right: 1.5rem; }
+ .platform-options { grid-template-columns: 1fr; }
+ .platform-option { flex-direction: row; align-items: center; padding: 1rem; }
+ .platform-option small { max-width: 55%; text-align: right; }
+ .tour-progress { gap: .8rem; }
+ .tour-progress-link { font-size: .7rem; }
+ .tour-progress-link span { display: none; }
+ .features-page .features-hero-title { font-size: 3.1rem; }
+ .tour-actions { flex-direction: column; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .features-page { scroll-behavior: auto; }
+ html:has(.features-page) { scroll-behavior: auto; }
+ .features-page *, .features-page *::before, .features-page *::after { animation: none !important; transition: none !important; }
+}
+
+[role="tabpanel"][hidden] { display: none !important; }
+.platform-option { font-family: inherit; text-align: left; cursor: pointer; transition: border-color .25s, background .25s; }
+.platform-option:hover { border-color: #718fbb; }
+.platform-preview { padding: 3rem 2rem 7rem; background: #07090e; }
+.preview-laptop,.preview-tablet { position: relative; width: min(900px,90%); margin: auto; border: 8px solid #242a33; background: radial-gradient(ellipse at top,#20324c,#0b1019 65%); box-shadow: 0 0 0 1px #667180; border-radius: 18px 18px 6px 6px; }
+.preview-laptop::after { content: ''; position: absolute; top: 100%; left: -6%; width: 112%; height: 12px; background: linear-gradient(#d5d9df,#77818d); border-radius: 2px 2px 8px 8px; }
+.preview-tablet { width: min(700px,90%); border-width: 12px; border-radius: 28px; }
+.preview-message { min-height: 380px; padding: 3rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.preview-message h2 { font-size: clamp(1.8rem,4vw,3.5rem); letter-spacing: -.05em; }
+.preview-message p { color: #aeb4c3; line-height: 1.8; margin-top: 1.5rem; }
+@media(max-width:600px) { .platform-preview { padding-inline: 1rem; } .preview-message { min-height: 300px; padding-inline: .75rem; } }
+
+.tour-download.theme-light { background: #f0f2f5; color: #141c28; border-color: #c4ccd8; }
+.tour-download.theme-light .tour-eyebrow { color: #526f95; }
+.tour-download.theme-light p { color: #536072; }
+body .tour-download.theme-light .tour-button-primary { background: #11151d; color: #fff; border-color: #11151d; }
+body .tour-download.theme-light .tour-button-primary:hover { background: #26354b; border-color: #26354b; }
+body .tour-download.theme-light .tour-button-secondary { background: transparent; color: #11151d; border-color: #a9b0bb; }
+body .tour-download.theme-light .tour-button-secondary:hover { background: #e0e6ef; color: #11151d; }
