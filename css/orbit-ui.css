@@ -417,15 +417,28 @@ body.features-page .tour-device .orbit-phone-screen img { object-fit: contain; }
 .footer-legal-links a {
   color: #cbd5e1 !important;
   transition: color 0.2s ease;
+  cursor: pointer;
 }
 .footer-legal-links a:hover {
   color: #38bdf8 !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .footer-col ul li a {
   color: #cbd5e1 !important;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
 }
 .footer-col ul li a:hover {
   color: #ffffff !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footer-col ul li a:focus-visible,
+.footer-legal-links a:focus-visible {
+  outline: 2px solid #38bdf8 !important;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 .hero-sub-small {
   color: #cbd5e1 !important;

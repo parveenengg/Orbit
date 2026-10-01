@@ -211,39 +211,8 @@
   }
 })();
 
-/* Privacy-Respecting Analytics Architecture (Zero PII, Respects DNT/GPC) */
-(() => {
-  const isDNTEnabled = () => {
-    return (
-      (typeof navigator !== 'undefined' && (navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true || window.doNotTrack === '1')) ||
-      localStorage.getItem('orbit_analytics_optout') === 'true'
-    );
-  };
-
-  window.OrbitAnalytics = {
-    isOptedOut: isDNTEnabled,
-    optOut: () => {
-      try {
-        localStorage.setItem('orbit_analytics_optout', 'true');
-        console.info('[Orbit Analytics] User opted out. Zero telemetry active.');
-      } catch (e) {}
-    },
-    optIn: () => {
-      try {
-        localStorage.removeItem('orbit_analytics_optout');
-        console.info('[Orbit Analytics] Analytics preference cleared.');
-      } catch (e) {}
-    },
-    track: (eventName, data = {}) => {
-      if (isDNTEnabled()) {
-        return;
-      }
-      if (window.va) {
-        window.va('event', { name: eventName, data });
-      }
-    }
-  };
-})();
+/* Zero-Analytics Policy — No third-party analytics, no telemetry, no tracking. */
+/* window.OrbitAnalytics removed. The Orbit website does not use Vercel Analytics or any other analytics SDK. */
 
 /* Interactive Form Validation with Spam Protection (Honeypot, Rate Limiting, Sanitization) */
 (() => {

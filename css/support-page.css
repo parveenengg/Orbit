@@ -1,0 +1,218 @@
+/* ============================================================
+   ORBIT — SUPPORT PAGE STYLES
+   Layered on top of orbit-pages.css and orbit-ui.css.
+   ============================================================ */
+
+/* Form layout */
+.orbit-support-form {
+  margin-top: 3rem;
+  max-width: 720px;
+}
+
+/* Honeypot — visually hidden but accessible to screen readers for bots */
+.support-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  tab-index: -1;
+}
+
+/* Individual field group */
+.support-field {
+  margin-bottom: 2rem;
+}
+
+/* Label */
+.support-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #c8d4e4;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+.support-label abbr {
+  color: #7ab3f5;
+  text-decoration: none;
+  margin-left: 0.15em;
+}
+.support-optional {
+  font-weight: 400;
+  color: #7a8a9e;
+  font-size: 0.82rem;
+}
+
+/* Hint text */
+.support-hint {
+  font-size: 0.82rem;
+  color: #7a8a9e;
+  line-height: 1.6;
+  margin: 0 0 0.6rem;
+}
+
+/* Shared input/select/textarea styles */
+.support-input,
+.support-select,
+.support-textarea {
+  display: block;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #e8edf4;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.support-input::placeholder,
+.support-textarea::placeholder {
+  color: #4a5668;
+}
+
+.support-input:focus,
+.support-select:focus,
+.support-textarea:focus {
+  border-color: rgba(100, 160, 240, 0.5);
+  box-shadow: 0 0 0 3px rgba(100, 160, 240, 0.12);
+}
+
+/* Error state */
+.support-input.has-error,
+.support-select.has-error,
+.support-textarea.has-error {
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.support-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a8a9e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+  padding-right: 2.8rem;
+  cursor: pointer;
+}
+
+.support-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+/* File input */
+.support-file-input {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: #a0aec0;
+  padding: 0.7rem 0;
+  cursor: pointer;
+}
+.support-file-input::file-selector-button {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  color: #c8d4e4;
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.support-file-input::file-selector-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.support-file-status {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #7ab3f5;
+  min-height: 1.2em;
+}
+
+/* Privacy notice strip */
+.support-privacy-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: rgba(100, 140, 200, 0.08);
+  border: 1px solid rgba(100, 140, 200, 0.18);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 2rem 0;
+}
+.support-privacy-note svg {
+  flex-shrink: 0;
+  color: #7ab3f5;
+  margin-top: 0.1rem;
+}
+.support-privacy-note p {
+  font-size: 0.84rem;
+  color: #8fa7c4;
+  line-height: 1.7;
+  margin: 0;
+}
+.support-privacy-note a {
+  color: #9dc3f5;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Form status message */
+.orbit-form-status {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  min-height: 1.5em;
+  padding: 0.6rem 0;
+  border-radius: 8px;
+  transition: color 0.2s ease;
+}
+.orbit-form-status.is-success {
+  color: #4ade80;
+}
+.orbit-form-status.is-error {
+  color: #f87171;
+}
+
+/* Submit actions row */
+.support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+/* Light section override for the "options" section on this page */
+.support-page .ep-light .ep-boundary ul {
+  color: #526073;
+}
+.support-page .ep-light .ep-boundary ul li {
+  margin-bottom: 0.2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .orbit-support-form {
+    margin-top: 2rem;
+  }
+  .support-actions {
+    flex-direction: column;
+  }
+  .support-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

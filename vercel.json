@@ -62,6 +62,26 @@
       "source": "/terms-and-conditions",
       "destination": "/terms",
       "permanent": true
+    },
+    {
+      "source": "/feedback",
+      "destination": "/support",
+      "permanent": true
+    },
+    {
+      "source": "/support-form",
+      "destination": "/support",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/support",
+      "permanent": true
+    },
+    {
+      "source": "/help",
+      "destination": "/support",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -98,6 +118,10 @@
       "destination": "/pages/manifesto"
     },
     {
+      "source": "/support",
+      "destination": "/pages/support"
+    },
+    {
       "source": "/documentation",
       "destination": "/pages/documentation"
     },
@@ -126,6 +150,10 @@
       "destination": "/css/download-page.css"
     },
     {
+      "source": "/support-page.css",
+      "destination": "/css/support-page.css"
+    },
+    {
       "source": "/app.js",
       "destination": "/js/app.js"
     },
@@ -148,6 +176,14 @@
     {
       "source": "/orbit-pages.js",
       "destination": "/js/orbit-pages.js"
+    },
+    {
+      "source": "/orbit-supabase.js",
+      "destination": "/js/orbit-supabase.js"
+    },
+    {
+      "source": "/orbit-support-form.js",
+      "destination": "/js/orbit-support-form.js"
     }
   ]
 }
