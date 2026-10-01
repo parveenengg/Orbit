@@ -21,26 +21,45 @@
 .ep-rail { display: flex; gap: 2rem; justify-content: space-between; border-top: 1px solid #ffffff20; border-bottom: 1px solid #ffffff20; padding: 1.5rem 0; color: #a4aebc; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
 .ep-section { padding: 7rem 0; }
 .ep-section h2 { font-size: clamp(2.5rem,4.8vw,4.5rem); line-height: 1.08; letter-spacing: -.055em; font-weight: 500; margin: 1.5rem 0; }
-.ep-light { background: #f0f2f5; color: #141c28; }
-.ep-light .ep-kicker { color: #526f95; }
+.ep-light { background: #f8fafc; color: #0f172a; }
+.ep-light h1, .ep-light h2, .ep-light h3, .ep-light h4 { color: #0f172a; }
+.ep-light .ep-kicker { color: #0284c7; font-weight: 600; }
 .ep-section-intro { max-width: 650px; }
 .ep-section-intro > p { color: #a2adbc; line-height: 1.8; }
-.ep-light .ep-section-intro > p { color: #536072; }
+.ep-light .ep-section-intro > p { color: #334155; font-size: 1.05rem; }
 .ep-boundary { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
 .ep-boundary article { border-top: 1px solid #aeb7c4; padding-top: 1.5rem; }
+.ep-light .ep-boundary article { border-top-color: #cbd5e1; }
 .ep-index { font: 500 .68rem/1.5 var(--font-sans); letter-spacing: .1em; color: #6b7e97; }
+.ep-light .ep-index { color: #475569; font-weight: 600; }
 .ep-boundary h3 { margin: 1.5rem 0 1rem; font-size: 1.7rem; font-weight: 500; letter-spacing: -.035em; }
+.ep-light .ep-boundary h3 { color: #0f172a; }
 .ep-boundary p { color: #526073; line-height: 1.85; }
+.ep-light .ep-boundary p { color: #334155; }
 .ep-boundary ul { padding-left: 1.1rem; margin-top: 1.5rem; color: #526073; line-height: 2; }
+.ep-light .ep-boundary ul { color: #334155; }
 .ep-note { border-left: 2px solid #7493bb; padding-left: 1.25rem; font-size: .85rem; color: #64748a; line-height: 1.75; margin-top: 3rem; }
+.ep-light .ep-note { border-left-color: #0284c7; color: #334155; background: rgba(2,132,199,0.06); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; }
 .ep-details { margin-top: 3rem; }
 .ep-details details { border-top: 1px solid #303948; padding: 0; }
 .ep-details details:last-child { border-bottom: 1px solid #303948; }
+.ep-light .ep-details details { border-top-color: #cbd5e1; }
+.ep-light .ep-details details:last-child { border-bottom-color: #cbd5e1; }
 .ep-details summary { list-style: none; display: flex; align-items: center; justify-content: space-between; padding: 1.6rem 0; font-size: clamp(1.1rem,2vw,1.5rem); cursor: pointer; }
+.ep-light .ep-details summary { color: #0f172a; font-weight: 600; }
 .ep-details summary::-webkit-details-marker { display:none; }
 .ep-details summary::after { content: '+'; font-weight: 300; color: #9ab5d8; font-size: 1.8rem; margin-left: 2rem; }
+.ep-light .ep-details summary::after { color: #0284c7; font-weight: 600; }
 .ep-details details[open] summary::after { content: '−'; }
 .ep-details details p { color: #a2adbc; max-width: 710px; padding-bottom: 1.8rem; line-height: 1.9; }
+.ep-light .ep-details details p,
+.ep-light .ep-details details ul,
+.ep-light .ep-details details li,
+.ep-light .ep-details details div { color: #1e293b !important; max-width: 760px; font-size: 1rem; line-height: 1.85; }
+.ep-light .ep-details details strong,
+.ep-light .ep-details details b { color: #0f172a !important; font-weight: 700; }
+.ep-light .ep-details details a { color: #0284c7 !important; text-decoration: underline; font-weight: 500; }
+.ep-light .ep-details details a:hover { color: #0369a1 !important; }
 .ep-text-link { color: inherit; display: inline-flex; gap: 2rem; text-decoration: none; padding: .6rem 0; border-bottom: 1px solid #71829a; margin-top: 1.5rem; font-size: .9rem; }
 .ep-text-link span { transition: transform .35s var(--ui-ease); }
 .ep-text-link:hover span { transform: translate(4px,-3px); }
@@ -110,9 +129,9 @@
  .ep-monogram { max-width: 400px; }
 }
 
-.ep-close.ep-light { background: #f0f2f5; color: #141c28; border-color: #c4ccd8; }
-.ep-close.ep-light .ep-kicker { color: #526f95; }
-.ep-close.ep-light p { color: #536072; }
+.ep-close.ep-light { background: #f8fafc; color: #0f172a; border-color: #cbd5e1; }
+.ep-close.ep-light .ep-kicker { color: #0284c7; font-weight: 600; }
+.ep-close.ep-light p { color: #334155; }
 
 /* About hero uses the actual Orbit identity. */
 .ep-brand-visual { display: grid; place-items: center; min-width: 0; padding: clamp(1rem, 3vw, 3rem); }
