@@ -276,13 +276,21 @@ body.features-page .tour-device .orbit-phone-screen img { object-fit: contain; }
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
+.orbit-cookie-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.orbit-cookie-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 .orbit-cookie-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  color: #94a3b8;
+  background: transparent !important;
+  border: none !important;
+  color: #94a3b8 !important;
   cursor: pointer;
   padding: 0.35rem;
   border-radius: 8px;
@@ -290,17 +298,15 @@ body.features-page .tour-device .orbit-phone-screen img { object-fit: contain; }
   align-items: center;
   justify-content: center;
   transition: color 0.2s, background 0.2s, transform 0.2s;
-  z-index: 2;
+  box-shadow: none !important;
+  outline: none;
+  min-height: auto !important;
+  line-height: 1;
 }
 .orbit-cookie-close:hover {
-  color: #f8fafc;
-  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   transform: scale(1.08);
-}
-.orbit-cookie-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
 }
 .orbit-cookie-icon {
   color: #38bdf8;
