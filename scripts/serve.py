@@ -11,21 +11,27 @@ import sys
 PORT = 8000
 DIRECTORY = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+REDIRECTS = {
+    "/home": "/",
+    "/index": "/",
+    "/privacy-policy": "/privacy",
+    "/terms-and-conditions": "/terms",
+    "/feedback": "/support",
+    "/support-form": "/support",
+    "/contact": "/support",
+    "/help": "/support",
+}
+
 REWRITES = {
     "/": "/index.html",
-    "/home": "/index.html",
     "/about": "/pages/about.html",
     "/features": "/pages/features.html",
     "/download": "/pages/download.html",
     "/opensource": "/pages/opensource.html",
     "/privacy": "/pages/privacy.html",
-    "/privacy-policy": "/pages/privacy.html",
     "/terms": "/pages/terms.html",
-    "/terms-and-conditions": "/pages/terms.html",
     "/manifesto": "/pages/manifesto.html",
     "/support": "/pages/support.html",
-    "/support-form": "/pages/support.html",
-    "/feedback": "/pages/support.html",
     "/documentation": "/pages/documentation.html",
     "/robots.txt": "/robots.txt",
     "/sitemap.xml": "/sitemap.xml",
@@ -34,6 +40,24 @@ REWRITES = {
 class CleanUrlHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
+
+    def do_GET(self):
+        clean_path = self.path.split("?")[0].rstrip("/")
+        if clean_path in REDIRECTS:
+            self.send_response(301)
+            self.send_header("Location", REDIRECTS[clean_path])
+            self.end_headers()
+            return
+        super().do_GET()
+
+    def do_HEAD(self):
+        clean_path = self.path.split("?")[0].rstrip("/")
+        if clean_path in REDIRECTS:
+            self.send_response(301)
+            self.send_header("Location", REDIRECTS[clean_path])
+            self.end_headers()
+            return
+        super().do_HEAD()
 
     def translate_path(self, path):
         clean_path = path.split("?")[0].rstrip("/")

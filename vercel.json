@@ -54,6 +54,11 @@
       "permanent": true
     },
     {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/privacy-policy",
       "destination": "/privacy",
       "permanent": true
@@ -85,10 +90,6 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/home",
-      "destination": "/"
-    },
     {
       "source": "/about",
       "destination": "/pages/about"
