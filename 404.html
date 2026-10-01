@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Lost in Deep Space · Orbit Browser</title>
+  <meta name="description" content="The page or coordinates you requested could not be located. Return to Orbit home.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Favicon Suite -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0c0f17">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/orbit-pages.css?v=7">
+  <link rel="stylesheet" href="/css/orbit-ui.css?v=17">
+  <style>
+    .not-found-wrapper {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+    }
+    .not-found-code {
+      font-size: clamp(6rem, 16vw, 12rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      background: linear-gradient(180deg, #ffffff 20%, #38bdf8 65%, #0369a1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .not-found-orbital {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 2rem;
+      display: grid;
+      place-items: center;
+    }
+    .not-found-ring {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 50%;
+      animation: orbitSpin 14s linear infinite;
+    }
+    .not-found-ring:nth-child(2) {
+      inset: 22px;
+      border-color: rgba(99, 102, 241, 0.2);
+      animation: orbitSpinRev 22s linear infinite;
+    }
+    @keyframes orbitSpin {
+      from { transform: rotate(0deg) scaleY(0.7); }
+      to { transform: rotate(360deg) scaleY(0.7); }
+    }
+    @keyframes orbitSpinRev {
+      from { transform: rotate(360deg) scaleY(0.85); }
+      to { transform: rotate(0deg) scaleY(0.85); }
+    }
+    .not-found-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #f1f5f9;
+      margin-bottom: 1rem;
+    }
+    .not-found-desc {
+      color: #94a3b8;
+      font-size: 1.15rem;
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      max-width: 600px;
+      width: 100%;
+    }
+    .quick-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    .quick-links a:hover {
+      color: #38bdf8;
+    }
+  </style>
+</head>
+<body class="theme-dark editorial-page">
+
+  <!-- Navigation -->
+  <nav class="site-nav" id="mainNav">
+    <div class="container nav-inner">
+      <a href="/home" class="nav-brand" aria-label="Orbit Home">
+        <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" class="brand-icon" width="28" height="28">
+        <span class="brand-name">Orbit</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/features" class="nav-link">Features</a></li>
+        <li><a href="/privacy" class="nav-link">Privacy</a></li>
+        <li><a href="/opensource" class="nav-link">Open Source</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="/download" class="btn btn-primary">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="not-found-wrapper">
+    <div class="not-found-orbital" aria-hidden="true">
+      <div class="not-found-ring"></div>
+      <div class="not-found-ring"></div>
+      <img src="/assets/icons/orbit-circle-128.png" alt="Orbit circular emblem" width="64" height="64" style="opacity: 0.9;">
+    </div>
+
+    <div class="not-found-code">404</div>
+    <h1 class="not-found-title">Lost in Deep Space</h1>
+    <p class="not-found-desc">
+      The coordinates or page you requested drifted out of orbit or never existed. Let’s get you back to familiar space.
+    </p>
+
+    <div class="ep-actions" style="justify-content: center;">
+      <a href="/" class="btn btn-primary">Return to Orbit Home <span aria-hidden="true">↗</span></a>
+      <a href="/download" class="btn btn-secondary">Download Orbit <span aria-hidden="true">↓</span></a>
+    </div>
+
+    <div class="quick-links">
+      <a href="/features">Features Tour</a>
+      <a href="/download">Downloads</a>
+      <a href="/opensource">Open Source</a>
+      <a href="/about">About Orbit</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-bg-ring"></div>
+    <div class="container relative">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" width="28" height="28">
+            <span>Orbit</span>
+          </div>
+          <p class="footer-desc">Browse on your terms.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/download">Download</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Open Source</h4>
+          <ul>
+            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener noreferrer">Repository</a></li>
+            <li><a href="/opensource">Contribute</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+            <li><a href="/terms#license">License</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy">Privacy policy</a></li>
+            <li><a href="/terms">Terms &amp; conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about#creator">Creator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between">
+        <p>&copy; 2026 Orbit Browser. Open source software.</p>
+        <div class="footer-legal-links">
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms &amp; conditions</a>
+          <a href="/terms#license">License</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/orbit-ui.js?v=17"></script>
+</body>
+</html>

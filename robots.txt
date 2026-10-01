@@ -1,0 +1,9 @@
+# robots.txt for Orbit Browser (https://orbitbrowser.com)
+User-agent: *
+Allow: /
+Disallow: /build/
+Disallow: /archive/
+Disallow: /scripts/
+Disallow: /downloads/
+
+Sitemap: https://orbitbrowser.com/sitemap.xml

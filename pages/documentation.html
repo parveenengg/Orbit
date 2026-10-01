@@ -1,5 +1,218 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Documentation · Orbit</title><link rel="icon" href="/assets/icons/orbit-circle.png"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/orbit-pages.css?v=4"><link rel="stylesheet" href="/orbit-ui.css?v=16"><style>section[id]{scroll-margin-top:2rem}.documentation-home{display:inline-flex;margin-bottom:2rem;color:inherit;text-decoration:none;align-items:center;gap:.7rem}.documentation-home img{width:36px;height:36px}</style></head>
-<body class="theme-dark editorial-page"><header class="ep-hero"><div class="ep-wrap"><a class="documentation-home" href="/home"><img src="/assets/icons/orbit-circle.png" alt="">Orbit · Back to home</a><span class="ep-kicker">PROJECT DOCUMENTATION</span><h1><span>We’re working</span><span class="ep-soft">on it.</span></h1><p class="ep-lead">The formal documentation is being prepared. It will be published here when it is ready.</p></div></header>
-<main><section class="ep-section" id="privacy-policy"><div class="ep-wrap"><span class="ep-kicker">PRIVACY POLICY</span><h2>Documentation in progress.</h2><p class="ep-lead">The formal privacy policy is not published yet. This notice is a placeholder, not a privacy policy.</p><div class="ep-actions"><a class="btn btn-primary" href="/privacy">Read the privacy overview ↗</a></div></div></section>
-<section class="ep-close ep-light" id="license"><div class="ep-wrap"><span class="ep-kicker">SOFTWARE LICENSE</span><h2>Documentation in progress.</h2><p>The software license is being prepared and is not published yet. This notice is a placeholder, not a license.</p><div class="ep-actions"><a class="btn btn-primary" href="https://github.com/parveenengg/Orbit">Follow the project on GitHub ↗</a></div></div></section></main><script src="/orbit-ui.js?v=5"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation &amp; Legal — Orbit Browser</title>
+  <meta name="description" content="Official documentation, cryptographic verification, software license, and legal compliance policies for the Orbit web browser.">
+  <meta name="author" content="Parveen Kumar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://orbitbrowser.com/documentation">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Documentation &amp; Legal — Orbit Browser">
+  <meta property="og:description" content="Official documentation, verification, software license, and legal policies for Orbit.">
+  <meta property="og:image" content="https://orbitbrowser.com/assets/images/orbit-social-preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orbitbrowser.com/documentation">
+  <meta property="og:site_name" content="Orbit Browser">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Documentation &amp; Legal — Orbit Browser">
+  <meta name="twitter:description" content="Official documentation, verification, software license, and legal policies for Orbit.">
+  <meta name="twitter:image" content="https://orbitbrowser.com/assets/images/orbit-social-preview.png">
+
+  <!-- Favicon Suite -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0c0f17">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/orbit-pages.css?v=7">
+  <link rel="stylesheet" href="/css/orbit-ui.css?v=17">
+  <style>
+    section[id] { scroll-margin-top: 2rem; }
+    .doc-code-block {
+      background: #090d16;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body class="theme-dark editorial-page">
+
+  <!-- Navigation -->
+  <nav class="site-nav" id="mainNav">
+    <div class="container nav-inner">
+      <a href="/home" class="nav-brand" aria-label="Orbit Home">
+        <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" class="brand-icon" width="28" height="28">
+        <span class="brand-name">Orbit</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/features" class="nav-link">Features</a></li>
+        <li><a href="/privacy" class="nav-link">Privacy</a></li>
+        <li><a href="/opensource" class="nav-link">Open Source</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="/download" class="btn btn-primary">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="ep-hero">
+    <div class="ep-wrap ep-hero-grid">
+      <div>
+        <span class="ep-kicker">PROJECT DOCUMENTATION</span>
+        <h1><span>Guides, code</span><span class="ep-soft">&amp; legal trust.</span></h1>
+        <p class="ep-lead">
+          Everything you need to verify, build, understand, and review the legal foundations of Orbit Browser.
+        </p>
+        <div class="ep-actions">
+          <a href="#verification" class="btn btn-primary">Verify Builds <span aria-hidden="true">↓</span></a>
+          <a href="#legal" class="btn btn-secondary">Legal Policies <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="ep-orbital" aria-hidden="true">
+        <i class="ep-orbital-ring"></i>
+        <i class="ep-orbital-ring"></i>
+        <i class="ep-orbital-ring"></i>
+        <span class="ep-orbital-center">&lt;/&gt;</span>
+        <span class="ep-orbital-caption">VERIFIABLE · OPEN · INDEPENDENT</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="ep-wrap ep-rail">
+      <span>Official Documentation</span>
+      <span>Cryptographic Checksums</span>
+      <span>Public Code</span>
+    </div>
+
+    <!-- Section 1: Verification -->
+    <section class="ep-section ep-light" id="verification">
+      <div class="ep-wrap">
+        <div class="ep-section-intro">
+          <span class="ep-kicker">01 / INTEGRITY VERIFICATION</span>
+          <h2>Cryptographic Checksum</h2>
+          <p>
+            You do not need to take our word for binary integrity. Every public release is published with a cryptographic SHA-256 hash so you can verify that your download has not been tampered with.
+          </p>
+          <div class="doc-code-block" style="background:#0f172a; color:#38bdf8;">
+            shasum -a 256 downloads/Orbit.apk
+          </div>
+          <p><strong>Expected SHA-256 (v1.0.1 Android Release):</strong></p>
+          <div class="doc-code-block" style="background:#0f172a; color:#34d399; word-break: break-all;">
+            932e81871003b12ccda0f6c17f5816a1bcaf13482fda6273d187c08dcf748bb4
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Legal Index -->
+    <section class="ep-section" id="legal">
+      <div class="ep-wrap">
+        <div class="ep-section-intro">
+          <span class="ep-kicker">02 / LEGAL &amp; GOVERNANCE</span>
+          <h2>Policies &amp; Agreements</h2>
+          <p>Direct access to our formal policies, open-source license, and terms of service.</p>
+        </div>
+
+        <div class="ep-boundary">
+          <article id="privacy-policy">
+            <span class="ep-index">PRIVACY POLICY</span>
+            <h3>Zero-Telemetry Privacy Policy</h3>
+            <p>Our complete legal privacy policy detailing our zero-telemetry architecture, local storage sandbox, search provider boundaries, and GDPR / CCPA rights.</p>
+            <div class="ep-actions" style="margin-top: 1.5rem;">
+              <a href="/privacy#formal-policy" class="btn btn-primary">Read Privacy Policy <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article id="license">
+            <span class="ep-index">SOFTWARE LICENSE &amp; TERMS</span>
+            <h3>Terms of Service &amp; License</h3>
+            <p>Open source terms of service, acceptable use guidelines, limitation of liability, and third-party content disclaimers.</p>
+            <div class="ep-actions" style="margin-top: 1.5rem;">
+              <a href="/terms" class="btn btn-primary">Read Terms &amp; Conditions <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-bg-ring"></div>
+    <div class="container relative">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" width="28" height="28">
+            <span>Orbit</span>
+          </div>
+          <p class="footer-desc">Browse on your terms.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/download">Download</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Open Source</h4>
+          <ul>
+            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener noreferrer">Repository</a></li>
+            <li><a href="/opensource">Contribute</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+            <li><a href="/terms#license">License</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy">Privacy policy</a></li>
+            <li><a href="/terms">Terms &amp; conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about#creator">Creator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between">
+        <p>&copy; 2026 Orbit Browser. Open source software.</p>
+        <div class="footer-legal-links">
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms &amp; conditions</a>
+          <a href="/terms#license">License</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/orbit-ui.js?v=17"></script>
+</body>
+</html>

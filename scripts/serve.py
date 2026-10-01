@@ -19,8 +19,13 @@ REWRITES = {
     "/download": "/pages/download.html",
     "/opensource": "/pages/opensource.html",
     "/privacy": "/pages/privacy.html",
+    "/privacy-policy": "/pages/privacy.html",
+    "/terms": "/pages/terms.html",
+    "/terms-and-conditions": "/pages/terms.html",
     "/manifesto": "/pages/manifesto.html",
     "/documentation": "/pages/documentation.html",
+    "/robots.txt": "/robots.txt",
+    "/sitemap.xml": "/sitemap.xml",
 }
 
 class CleanUrlHandler(http.server.SimpleHTTPRequestHandler):
@@ -37,9 +42,27 @@ class CleanUrlHandler(http.server.SimpleHTTPRequestHandler):
             path = clean_path
 
         resolved = super().translate_path(path)
-        if not os.path.exists(resolved) and os.path.exists(resolved + ".html"):
-            return resolved + ".html"
+        if not os.path.exists(resolved):
+            if os.path.exists(resolved + ".html"):
+                return resolved + ".html"
+            basename = os.path.basename(resolved)
+            if basename.endswith(".css") and os.path.exists(os.path.join(DIRECTORY, "css", basename)):
+                return os.path.join(DIRECTORY, "css", basename)
+            if basename.endswith(".js") and os.path.exists(os.path.join(DIRECTORY, "js", basename)):
+                return os.path.join(DIRECTORY, "js", basename)
         return resolved
+
+    def send_error(self, code, message=None, explain=None):
+        if code == 404:
+            custom_404 = os.path.join(DIRECTORY, "404.html")
+            if os.path.exists(custom_404):
+                self.send_response(404)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                with open(custom_404, "rb") as f:
+                    self.wfile.write(f.read())
+                return
+        super().send_error(code, message, explain)
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else PORT

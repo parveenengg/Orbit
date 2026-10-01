@@ -2,10 +2,65 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        }
+      ]
+    },
+    {
+      "source": "/(assets|css|js|vendor)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(favicon.ico|site.webmanifest|robots.txt|sitemap.xml)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, must-revalidate"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/index",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
       "permanent": true
     }
   ],
@@ -35,12 +90,64 @@
       "destination": "/pages/privacy"
     },
     {
+      "source": "/terms",
+      "destination": "/pages/terms"
+    },
+    {
       "source": "/manifesto",
       "destination": "/pages/manifesto"
     },
     {
       "source": "/documentation",
       "destination": "/pages/documentation"
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/css/styles.css"
+    },
+    {
+      "source": "/orbit-ui.css",
+      "destination": "/css/orbit-ui.css"
+    },
+    {
+      "source": "/home-page.css",
+      "destination": "/css/home-page.css"
+    },
+    {
+      "source": "/orbit-pages.css",
+      "destination": "/css/orbit-pages.css"
+    },
+    {
+      "source": "/features-tour.css",
+      "destination": "/css/features-tour.css"
+    },
+    {
+      "source": "/download-page.css",
+      "destination": "/css/download-page.css"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/js/app.js"
+    },
+    {
+      "source": "/three-scene.js",
+      "destination": "/js/three-scene.js"
+    },
+    {
+      "source": "/orbit-ui.js",
+      "destination": "/js/orbit-ui.js"
+    },
+    {
+      "source": "/home-page.js",
+      "destination": "/js/home-page.js"
+    },
+    {
+      "source": "/features-tour.js",
+      "destination": "/js/features-tour.js"
+    },
+    {
+      "source": "/orbit-pages.js",
+      "destination": "/js/orbit-pages.js"
     }
   ]
 }

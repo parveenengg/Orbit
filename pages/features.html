@@ -3,12 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Features · Orbit Browser</title>
+  <title>Features — Orbit Browser | Speed, Focus &amp; Zero-Telemetry</title>
   <meta name="description" content="Explore Orbit's actual features: distraction-free home, visual card tabs, granular privacy controls, and deep personalization.">
   <meta name="author" content="Parveen Kumar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://orbitbrowser.com/features">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/icons/orbit-circle.png">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Features — Orbit Browser | Speed, Focus &amp; Zero-Telemetry">
+  <meta property="og:description" content="Explore Orbit's thoughtful features: visual tab management, zero-tracking omnibar, intelligent autofill, and lightweight design.">
+  <meta property="og:image" content="https://orbitbrowser.com/assets/images/orbit-social-preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orbitbrowser.com/features">
+  <meta property="og:site_name" content="Orbit Browser">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Features — Orbit Browser | Speed, Focus &amp; Zero-Telemetry">
+  <meta name="twitter:description" content="Explore Orbit's thoughtful features: visual tab management, zero-tracking omnibar, intelligent autofill, and lightweight design.">
+  <meta name="twitter:image" content="https://orbitbrowser.com/assets/images/orbit-social-preview.png">
+
+  <!-- Favicon Suite -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0c0f17">
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +37,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Core Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/features-tour.css?v=4">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/features-tour.css?v=4">
 
   <!-- GSAP & ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <link rel="stylesheet" href="/orbit-ui.css?v=16">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="/css/orbit-ui.css?v=17">
 </head>
 <body class="theme-dark features-page">
 
@@ -30,7 +51,7 @@
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
       <a href="/home" class="nav-brand" aria-label="Orbit Home">
-        <img src="/assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
+        <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" class="brand-icon" width="28" height="28">
         <span class="brand-name">Orbit</span>
       </a>
 
@@ -207,7 +228,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="/assets/icons/orbit-circle.png" alt="Orbit Logo">
+            <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" width="28" height="28">
             <span>Orbit</span>
           </div>
           <p class="footer-desc">Browse on your terms.</p>
@@ -224,17 +245,18 @@
         <div class="footer-col">
           <h4>Open Source</h4>
           <ul>
-            <li><a href="https://github.com/parveenengg/Orbit">Repository</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener noreferrer">Repository</a></li>
             <li><a href="/opensource">Contribute</a></li>
-            <li><a href="https://github.com/parveenengg/Orbit/issues">Issues</a></li>
-            <li><a href="/documentation#license">License</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+            <li><a href="/terms#license">License</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Trust</h4>
+          <h4>Trust &amp; Legal</h4>
           <ul>
-            <li><a href="/documentation#privacy-policy">Privacy policy</a></li>
+            <li><a href="/privacy">Privacy policy</a></li>
+            <li><a href="/terms">Terms &amp; conditions</a></li>
           </ul>
         </div>
 
@@ -248,17 +270,17 @@
       </div>
 
       <div class="footer-bottom flex-between">
-        <p>&copy; 2026 Orbit Browser.</p>
+        <p>&copy; 2026 Orbit Browser. Open source software.</p>
         <div class="footer-legal-links">
-          <a href="/documentation#privacy-policy">Privacy policy</a>
-          <a href="/documentation#license">License</a>
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms &amp; conditions</a>
+          <a href="/terms#license">License</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/app.js?v=arrival-zoom-1"></script>
-  <script src="/features-tour.js?v=3"></script>
-  <script src="/orbit-ui.js?v=5"></script>
+  <script src="/js/features-tour.js?v=4" defer></script>
+  <script src="/js/orbit-ui.js?v=17" defer></script>
 </body>
 </html>

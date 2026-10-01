@@ -3,14 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Orbit Manifesto: A Return to Intentional Browsing</title>
-  <meta name="description" content="The Orbit Privacy Manifesto: Why we built an open-source browser with zero developer tracking.">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/icons/orbit-circle.png">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/orbit-ui.css?v=16">
+  <title>The Orbit Manifesto — Restoring Agency to the Web</title>
+  <meta name="description" content="Read our declaration on why browsers should belong to their users: 100% open source, zero developer-side tracking, and serene web speed.">
+  <meta name="author" content="Parveen Kumar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://orbitbrowser.com/manifesto">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Orbit Manifesto — Restoring Agency to the Web">
+  <meta property="og:description" content="The Orbit Privacy Manifesto: Why we built an open-source browser with zero developer tracking.">
+  <meta property="og:image" content="https://orbitbrowser.com/assets/images/orbit-social-preview.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://orbitbrowser.com/manifesto">
+  <meta property="og:site_name" content="Orbit Browser">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Orbit Manifesto — Restoring Agency to the Web">
+  <meta name="twitter:description" content="The Orbit Privacy Manifesto: Why we built an open-source browser with zero developer tracking.">
+  <meta name="twitter:image" content="https://orbitbrowser.com/assets/images/orbit-social-preview.png">
+
+  <!-- Favicon Suite -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0c0f17">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/orbit-ui.css?v=17">
 </head>
-<body>
+<body class="theme-dark">
 
   <div id="webgl-container" aria-hidden="true"></div>
   <div class="noise-overlay" aria-hidden="true"></div>
@@ -19,37 +43,35 @@
   <nav class="site-nav" id="mainNav">
     <div class="container nav-inner">
       <a href="/home" class="nav-brand" aria-label="Orbit Home">
-        <img src="/assets/icons/orbit-circle.png" alt="Orbit Logo" class="brand-icon">
-        <span class="brand-name">ORBIT</span>
+        <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" class="brand-icon" width="28" height="28">
+        <span class="brand-name">Orbit</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="/home" class="nav-link">Home</a></li>
         <li><a href="/features" class="nav-link">Features</a></li>
-        <li><a href="/manifesto" class="nav-link active">Manifesto</a></li>
-        <li><a href="/download" class="nav-link">Download</a></li>
+        <li><a href="/privacy" class="nav-link">Privacy</a></li>
+        <li><a href="/opensource" class="nav-link">Open Source</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="/download" class="btn btn-sm btn-primary">
-          <span>Download</span>
-        </a>
+        <a href="/download" class="btn btn-primary">Download</a>
       </div>
     </div>
   </nav>
 
   <!-- Editorial Manifesto -->
-  <article class="page-hero" style="padding-bottom: 8rem;">
+  <article class="page-hero" style="padding-top: 10rem; padding-bottom: 8rem;">
     <div class="container container-narrow">
       
-      <span class="mono" style="font-size: 0.8rem; color: var(--accent-blue); letter-spacing: 0.08em; text-transform: uppercase;">The Orbit Manifesto</span>
+      <span class="mono" style="font-size: 0.8rem; color: #38bdf8; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;">The Orbit Manifesto</span>
       
-      <h1 class="hero-title" style="font-size: clamp(2.5rem, 5.5vw, 4.5rem); margin: 1.5rem 0 2.5rem;">
+      <h1 class="hero-title" style="font-size: clamp(2.5rem, 5.5vw, 4.5rem); margin: 1.5rem 0 2.5rem; letter-spacing: -0.04em;">
         The Internet Forgot<br>
         <span class="text-gradient">How to Be Quiet.</span>
       </h1>
 
-      <div style="text-align: left; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; display: flex; flex-direction: column; gap: 2rem;">
+      <div style="text-align: left; font-size: 1.15rem; color: #cbd5e1; line-height: 1.85; display: flex; flex-direction: column; gap: 2rem;">
         <p>
           Somewhere in the last decade, web browsers stopped being neutral instruments for human discovery and became surveillance outposts for advertising conglomerates.
         </p>
@@ -58,7 +80,7 @@
           Chrome quietly became an advertising broker’s operating system, consuming multiple gigabytes of memory to track your behavioral profile across tabs. Brave attempted to fix privacy, but cluttered your screen with crypto wallets, token rewards, and sponsored wallpapers. Other experimental browsers introduced complexity with steep learning curves and heavy memory overhead.
         </p>
 
-        <blockquote style="border-left: 2px solid var(--accent-blue); padding-left: 1.5rem; color: #FFFFFF; font-size: 1.35rem; font-family: var(--font-display); line-height: 1.5;">
+        <blockquote style="border-left: 3px solid #38bdf8; padding-left: 1.5rem; color: #ffffff; font-size: 1.35rem; font-family: var(--font-display, inherit); line-height: 1.5;">
           “People don’t need another browser that tries to manage their life. They need a window that gets out of their way.”
         </blockquote>
 
@@ -70,13 +92,13 @@
           No crypto. No bloatware. Just pure, serene web speed.
         </p>
 
-        <div class="manifesto-source-close theme-light" style="margin-top: 2rem; padding: 2rem; background: rgba(14, 14, 20, 0.7); border: var(--border-light); border-radius: var(--radius-lg); backdrop-filter: blur(20px);">
-          <div style="font-size: 0.85rem; color: #FFFFFF; font-weight: 600; margin-bottom: 0.5rem;">Open Source Transparency</div>
-          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
-            Follow Orbit on GitHub for project updates, feedback, and contributions.
+        <div class="manifesto-source-close" style="margin-top: 2rem; padding: 2.2rem; background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; backdrop-filter: blur(20px);">
+          <div style="font-size: 1rem; color: #ffffff; font-weight: 600; margin-bottom: 0.5rem;">Open Source Transparency</div>
+          <p style="font-size: 0.95rem; color: #94a3b8; margin-bottom: 1.25rem;">
+            Follow Orbit on GitHub for project updates, feedback, architectural discussions, and code inspection.
           </p>
-          <a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
-            <span>Follow on GitHub &rarr;</span>
+          <a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Follow on GitHub <span aria-hidden="true">&rarr;</span></span>
           </a>
         </div>
       </div>
@@ -84,20 +106,65 @@
     </div>
   </article>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom"><span><a href="/documentation#privacy-policy">Privacy policy</a> · <a href="/documentation#license">License</a></span>
-        <span>&copy; 2026 Orbit Browser. Open source. Zero telemetry.</span>
-        <span>Crafted by <a href="https://github.com/parveenengg" target="_blank" rel="noopener" style="color: var(--text-secondary); text-decoration: underline;">Parveen Kumar</a></span>
+    <div class="footer-bg-ring"></div>
+    <div class="container relative">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/assets/icons/orbit-circle-128.png" alt="Orbit Logo" width="28" height="28">
+            <span>Orbit</span>
+          </div>
+          <p class="footer-desc">Browse on your terms.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/download">Download</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Open Source</h4>
+          <ul>
+            <li><a href="https://github.com/parveenengg/Orbit" target="_blank" rel="noopener noreferrer">Repository</a></li>
+            <li><a href="/opensource">Contribute</a></li>
+            <li><a href="https://github.com/parveenengg/Orbit/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+            <li><a href="/terms#license">License</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust &amp; Legal</h4>
+          <ul>
+            <li><a href="/privacy">Privacy policy</a></li>
+            <li><a href="/terms">Terms &amp; conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about#creator">Creator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom flex-between">
+        <p>&copy; 2026 Orbit Browser. Open source software.</p>
+        <div class="footer-legal-links">
+          <a href="/privacy">Privacy policy</a>
+          <a href="/terms">Terms &amp; conditions</a>
+          <a href="/terms#license">License</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="/vendor/three.min.js"></script>
-  <script src="/vendor/gsap.min.js"></script>
-  <script src="/three-scene.js?v=9"></script>
-  <script src="/app.js?v=arrival-zoom-1"></script>
-  <script src="/orbit-ui.js?v=5"></script>
+  <script src="/js/orbit-ui.js?v=17"></script>
 </body>
 </html>

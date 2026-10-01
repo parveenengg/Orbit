@@ -2,6 +2,12 @@
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.cert
+*.crt
+*.secret
+credentials.json
 .vercel/
 archive/
 old_*
